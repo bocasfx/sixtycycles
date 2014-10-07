@@ -162,7 +162,7 @@ var sc = {
 			fgcolor = sc.colours[colourIdx][fgidx];
 
 			// console.log("Creating project: " + sc.projects[i]);
-			var cell = $( "<div class='col-md-3 cell right'><a href='#' data-toggle=modal data-target=#myModal><div class='inner-cell cell-link'>Title</div></a></div>" );
+			var cell = $( "<div class='col-xs-3 cell right'><a href='#' data-toggle=modal data-target=#myModal><div class='inner-cell cell-link'>Title</div></a></div>" );
 			var bgUrl = 'img/' + sc.projects[i].class + '.jpg';
 			cell.css('background', 'url(' + bgUrl +')');
 			cell.css('background-position', 'center');
