@@ -1,0 +1,9 @@
+{
+  "name": "sixtycycles",
+  "version": "1.0.0",
+  "description": "sixtycycles",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
