@@ -4,107 +4,128 @@
       "name" : "Savvy Green",
       "id" : "savvy-green",
       "description": "Web design proposal for soap manufacturer Savvy Green",
-      "icon": "fa-html5"
+      "icons": ["fa-html5", "fa-check"]
     },
     {
       "name" : "Vital Response",
       "id" : "vital-response",
       "description": "Web design for first aid training company Vital Response",
-      "icon": "fa-check"
+      "icons": ["fa-check"]
     },
     {
       "name" : "Brains",
       "id" : "brains",
-      "icon": "fa-pencil"
+      "icons": ["fa-pencil"]
     },
     {
       "name" : "Agfa Deploy",
       "id" : "agfa-deploy",
-      "icon": "fa-paint-brush"
+      "icons": ["fa-paint-brush"]
     },
     {
       "name" : "Bloom",
-      "id" : "bloom"
+      "id" : "bloom",
+      "icons" : []
     },
     {
       "name" : "Pink Chipotle",
-      "id" : "pink-chipotle"
+      "id" : "pink-chipotle",
+      "icons" : []
     },
     {
       "name" : "The Sofa Kings",
-      "id" : "the-sofa-kings"
+      "id" : "the-sofa-kings",
+      "icons" : []
     },
     {
       "name" : "Q",
-      "id" : "q"
+      "id" : "q",
+      "icons" : []
     },
     {
       "name" : "eSpire",
-      "id" : "espire"
+      "id" : "espire",
+      "icons" : []
     },
     {
       "name" : "GeeBee",
-      "id" : "geebee"
+      "id" : "geebee",
+      "icons" : []
     },
     {
       "name" : "The Sofa Kings",
-      "id" : "the-sofa-kings-1"
+      "id" : "the-sofa-kings-1",
+      "icons" : []
     },
     {
       "name" : "Your Time Boutique",
-      "id" : "your-time-boutique"
+      "id" : "your-time-boutique",
+      "icons" : []
     },
     {
       "name" : "MIDIWorm",
-      "id" : "midiworm"
+      "id" : "midiworm",
+      "icons" : []
     },
     {
       "name" : "Tape",
-      "id" : "tape"
+      "id" : "tape",
+      "icons" : []
     },
     {
       "name" : "Bubbles",
-      "id" : "bubbles"
+      "id" : "bubbles",
+      "icons" : []
     },
     {
       "name" : "Marvin",
-      "id" : "marvin"
+      "id" : "marvin",
+      "icons" : []
     },
     {
       "name" : "The Vinyl Revival",
-      "id" : "the-vinyl-revival"
+      "id" : "the-vinyl-revival",
+      "icons" : []
     },
     {
       "name" : "Spanish Solutions",
-      "id" : "spanish-solutions"
+      "id" : "spanish-solutions",
+      "icons" : []
     },
     {
       "name" : "Smarter Resources",
-      "id" : "smarter-resources"
+      "id" : "smarter-resources",
+      "icons" : []
     },
     {
       "name" : "Druidas",
-      "id" : "druidas"
+      "id" : "druidas",
+      "icons" : []
     },
     {
       "name" : "Rhino Works",
-      "id" : "rhino-works"
+      "id" : "rhino-works",
+      "icons" : []
     },
     {
       "name" : "Give & Get Network",
-      "id" : "give-n-get-network"
+      "id" : "give-n-get-network",
+      "icons" : []
     },
     {
       "name" : "The Rambler",
-      "id" : "the-rambler"
+      "id" : "the-rambler",
+      "icons" : []
     },
     {
       "name" : "Non-Violence Festival",
-      "id" : "non-violence-festival"
+      "id" : "non-violence-festival",
+      "icons" : []
     },
     {
       "name" : "The Tree Within",
-      "id" : "the-tree-within"
+      "id" : "the-tree-within",
+      "icons" : []
     }
   ],
   "colours" : [
