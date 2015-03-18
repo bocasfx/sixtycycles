@@ -1,0 +1,151 @@
+{
+  "projects": [
+    {
+      "name" : "Savvy Green",
+      "id" : "savvy-green",
+      "description": "Web design proposal for soap manufacturer Savvy Green",
+      "icon": "fa-html5"
+    },
+    {
+      "name" : "Vital Response",
+      "id" : "vital-response",
+      "description": "Web design for first aid training company Vital Response",
+      "icon": "fa-check"
+    },
+    {
+      "name" : "Brains",
+      "id" : "brains",
+      "icon": "fa-pencil"
+    },
+    {
+      "name" : "Agfa Deploy",
+      "id" : "agfa-deploy",
+      "icon": "fa-paint-brush"
+    },
+    {
+      "name" : "Bloom",
+      "id" : "bloom"
+    },
+    {
+      "name" : "Pink Chipotle",
+      "id" : "pink-chipotle"
+    },
+    {
+      "name" : "The Sofa Kings",
+      "id" : "the-sofa-kings"
+    },
+    {
+      "name" : "Q",
+      "id" : "q"
+    },
+    {
+      "name" : "eSpire",
+      "id" : "espire"
+    },
+    {
+      "name" : "GeeBee",
+      "id" : "geebee"
+    },
+    {
+      "name" : "The Sofa Kings",
+      "id" : "the-sofa-kings-1"
+    },
+    {
+      "name" : "Your Time Boutique",
+      "id" : "your-time-boutique"
+    },
+    {
+      "name" : "MIDIWorm",
+      "id" : "midiworm"
+    },
+    {
+      "name" : "Tape",
+      "id" : "tape"
+    },
+    {
+      "name" : "Bubbles",
+      "id" : "bubbles"
+    },
+    {
+      "name" : "Marvin",
+      "id" : "marvin"
+    },
+    {
+      "name" : "The Vinyl Revival",
+      "id" : "the-vinyl-revival"
+    },
+    {
+      "name" : "Spanish Solutions",
+      "id" : "spanish-solutions"
+    },
+    {
+      "name" : "Smarter Resources",
+      "id" : "smarter-resources"
+    },
+    {
+      "name" : "Druidas",
+      "id" : "druidas"
+    },
+    {
+      "name" : "Rhino Works",
+      "id" : "rhino-works"
+    },
+    {
+      "name" : "Give & Get Network",
+      "id" : "give-n-get-network"
+    },
+    {
+      "name" : "The Rambler",
+      "id" : "the-rambler"
+    },
+    {
+      "name" : "Non-Violence Festival",
+      "id" : "non-violence-festival"
+    },
+    {
+      "name" : "The Tree Within",
+      "id" : "the-tree-within"
+    }
+  ],
+  "colours" : [
+    [
+      "#D100A3",
+      "#F809C3",
+      "#E800B5",
+      "#9C037A",
+      "#700D5A",
+      "#D9008D",
+      "#F909A5",
+      "#EC0099",
+      "#A5036D",
+      "#760E52",
+      "#C700BE",
+      "#F709EC",
+      "#E200D8",
+      "#8E0388",
+      "#660C62"
+    ],
+    [
+      "#FA2716",
+      "#E4746B",
+      "#E54D42",
+      "#FA1200",
+      "#EF1100",
+      "#1C7788",
+      "#168094",
+      "#197C8E",
+      "#1F7281",
+      "#216D7B",
+      "#F1F3ED",
+      "#A4B782",
+      "#C5D2AE",
+      "#D2D5CD",
+      "#B7BAB3",
+      "#68B475",
+      "#77C284",
+      "#6FBB7D",
+      "#5FAC6D",
+      "#53A161"
+    ]
+  ]
+}
