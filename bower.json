@@ -1,0 +1,23 @@
+{
+  "name": "sixtycycles",
+  "version": "1.0.0",
+  "homepage": "https://github.com/bocasfx/sixtycycles",
+  "authors": [
+    "bocasfx <rpalacios75@gmail.com>"
+  ],
+  "main": "www/index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.4",
+    "fontawesome": "~4.3.0",
+    "bootstrap": "~3.3.4",
+    "jquery": "~2.1.3"
+  }
+}
