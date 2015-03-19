@@ -110,48 +110,47 @@ body {
 @media only screen and (min-width: 768px) {
   .sc-modal-dialog {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto
   }
 }
 
 @media only screen and (min-width: 1281px) {
   .sc-modal-dialog {
     width: 1024px;
-    margin-left: auto;
-    margin-right: auto
   }
 }
 
 .sc-modal-content {
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  margin-top: 25px;
+  margin-bottom: 50px;
   margin-top: 0
 }
 
 @media only screen and (min-width: 768px) {
   .sc-modal-content {
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    border-radius: 0;
     margin-top: 25px
   }
 }
 
 .sc-button {
-  background-color: #CCC;
-  border-radius: 0;
-  background-image: none;
-  text-shadow: none;
-  color: #EC0099
+  background: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
+  background: -o-linear-gradient(#484e55, #3a3f44 60%, #313539);
+  background: -moz-linear-gradient(#484e55, #3a3f44 60%, #313539);
+  background: linear-gradient(#484e55, #3a3f44 60%, #313539);
+  /*border-radius: 0;*/
+  /*text-shadow: none;*/
+  color: #FFF;
 }
 
 .sc-button:hover {
-  background-color: #EC0099;
-  color: #FFF
+  background: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
+  background: -o-linear-gradient(#484e55, #3a3f44 60%, #313539);
+  background: -moz-linear-gradient(#484e55, #3a3f44 60%, #313539);
+  background: linear-gradient(#484e55, #3a3f44 60%, #313539);
+  /*border-radius: 0;*/
+  /*text-shadow: none;*/
+  color: #FD0066;
 }
+
+
 
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0,0%);
@@ -171,11 +170,30 @@ body {
   transition: opacity .5s
 }
 
+.modal-link, .modal-link:visited {
+  color: #FD0066;
+}
+
+.modal-link:hover {
+  color: #666;
+}
+
 .sc-img {
   width: 90%;
   box-shadow: 3px 3px 10px 3px #CCC;
   margin-top: 40px;
   border: 10px solid #FFF
+}
+
+.sc-modal-text {
+  margin: 20px 20px 0 20px;
+  text-align: justify;
+}
+
+.sc-modal-video {
+  width: 80%;
+  height: 40%;
+  margin: 50px 20px 20px 20px;
 }
 
 .sc-modal-title {
@@ -192,16 +210,6 @@ body {
   background: linear-gradient(#484e55, #3a3f44 60%, #313539)
 }
 
-@media only screen and (min-width: 768px) {
-  .sc-modal-header {
-    background:  #FFF;
-    border:  none;
-  }
-
-  .sc-modal-header h4 {
-    visibility:  hidden;
-  }
-}
 
 .sc-project-entry {
   color: #666;

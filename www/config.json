@@ -1,21 +1,28 @@
 {
   "projects": [
     {
+      "name" : "Drone",
+      "id" : "drone",
+      "description": "A 3D web application that allows the user to enjoy visual and auditory experiences by freely navigating within its environment.",
+      "icons": ["fa-html5", "fa-css3", "fa-video-camera", "fa-cube", "fa-code"]
+    },
+    {
+      "name" : "GeeBee Pedals",
+      "id" : "geebee-pedals",
+      "description": "Web design for pedals manufacturer GeeBee",
+      "icons": ["fa-html5", "fa-css3"]
+    },
+    {
       "name" : "Savvy Green",
       "id" : "savvy-green",
       "description": "Web design proposal for soap manufacturer Savvy Green",
-      "icons": ["fa-html5", "fa-check"]
+      "icons": ["fa-html5", "fa-css3"]
     },
     {
       "name" : "Vital Response",
       "id" : "vital-response",
       "description": "Web design for first aid training company Vital Response",
-      "icons": ["fa-check"]
-    },
-    {
-      "name" : "Brains",
-      "id" : "brains",
-      "icons": ["fa-pencil"]
+      "icons": ["fa-html5", "fa-css3"]
     },
     {
       "name" : "Agfa Deploy",
@@ -25,32 +32,32 @@
     {
       "name" : "Bloom",
       "id" : "bloom",
-      "icons" : []
+      "icons" : ["fa-video-camera", "fa-music", "fa-code"]
     },
     {
       "name" : "Pink Chipotle",
       "id" : "pink-chipotle",
-      "icons" : []
+      "icons" : ["fa-html5", "fa-css3", "fa-cutlery"]
     },
     {
       "name" : "The Sofa Kings",
       "id" : "the-sofa-kings",
-      "icons" : []
+      "icons" : ["fa-music", "fa-paint-brush"]
     },
     {
       "name" : "Q",
       "id" : "q",
-      "icons" : []
+      "icons" : ["fa-music", "fa-code"]
     },
     {
       "name" : "eSpire",
       "id" : "espire",
-      "icons" : []
+      "icons" : ["fa-paint-brush"]
     },
     {
       "name" : "GeeBee",
       "id" : "geebee",
-      "icons" : []
+      "icons" : ["fa-paint-brush"]
     },
     {
       "name" : "The Sofa Kings",
