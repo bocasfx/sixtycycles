@@ -4,6 +4,7 @@
   "description": "sixtycycles",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-watch": "^4.2.0"
   }
 }
