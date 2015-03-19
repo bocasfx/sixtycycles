@@ -2,8 +2,11 @@ header {
     display: block;
     padding: 10px 0 10px 50px;
     width: 100%;
-    color: #FFF;
-    background-color: #CCC;
+    color: #FD0066;
+    background: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background: -o-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background: -moz-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background: linear-gradient(#484e55, #3a3f44 60%, #313539);
     font-size: 1.5em;
     position: fixed;
     top: 0;
@@ -74,21 +77,30 @@ body {
     width: 100%;
     top: 0;
     z-index: -1;
-    color: #FFF;
-    background-color: #AAA;
+    color: #FD0066;
+    /*background: -webkit-linear-gradient(#8a9196, #7a8288 60%, #70787d);
+    background: -o-linear-gradient(#8a9196, #7a8288 60%, #70787d);
+    background: -moz-linear-gradient(#8a9196, #7a8288 60%, #70787d);
+    background: linear-gradient(#8a9196, #7a8288 60%, #70787d);*/
+
+    background: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background: -o-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background: -moz-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background: linear-gradient(#484e55, #3a3f44 60%, #313539);
     height: 200px;
 }
 
 .back-description {
-    margin-top: 20px;
-    color: #666;
+    margin: 20px 0 20px 20px;
+    color: #CCC;
 }
 
 .cell-icon {
-    margin-left: 10px;
+    margin-left: 5px;
+    color: #777;
 }
 
-.col-md-3 {
+.col-md-4 {
     padding-left: 0;
     padding-right: 0;
 }
@@ -161,7 +173,10 @@ body {
 }
 
 .sc-modal-header {
-    background-color: #CCC;
+    background: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background: -o-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background: -moz-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background: linear-gradient(#484e55, #3a3f44 60%, #313539);
 }
 
 .sc-project-entry {

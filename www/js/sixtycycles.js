@@ -3,15 +3,13 @@ var sc = {
   createCells : function () {
     var idx = 0;
 
-    var colourIdx = 0;
-
     for (var i = 0; i < sc.projects.length; i++) {
 
-      var bgidx = (idx % sc.colours[colourIdx].length);
-      var fgidx = ((idx + 2) % sc.colours[colourIdx].length);
+      var bgidx = (idx % sc.colors.length);
+      var fgidx = ((idx + 2) % sc.colors.length);
 
-      bgcolor = sc.colours[colourIdx][bgidx];
-      fgcolor = sc.colours[colourIdx][fgidx];
+      bgcolor = sc.colors[bgidx];
+      fgcolor = sc.colors[fgidx];
 
 
       var name = sc.projects[i].name;
@@ -40,12 +38,17 @@ var sc = {
       var backDescription = $("<div>", {"class": "back-description"});
       backDescription.text(desc);
       backCell.append(backTitle);
-      icons.forEach(sc.appendIcon, backCell);
+
+      var iconPrefs = {
+        backCell: backCell
+      };
+
+      icons.forEach(sc.appendIcon, iconPrefs);
       backCell.append(backDescription);
 
       cellAnchor.append(innerCell);
 
-      var cell = $("<div>", {"class": "col-md-3 cell right"});
+      var cell = $("<div>", {"class": "col-md-4 cell right"});
       cell.append(cellAnchor);
       cell.append(backCell);
 
@@ -57,7 +60,7 @@ var sc = {
 
   appendIcon: function(item, index) {
     var cellIcon = $("<span>", {"class": "cell-icon fa " + item});
-    this.append(cellIcon);
+    this.backCell.append(cellIcon);
   },
 
   populateModal: function(event) {
@@ -69,7 +72,7 @@ var sc = {
 $( document ).ready(function() {
   $.getJSON("config.json", function(data) {
     sc.projects = data.projects;
-    sc.colours = data.colours;
+    sc.colors = data.colors;
     sc.createCells();
   });
 });
