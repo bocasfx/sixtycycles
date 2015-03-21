@@ -1,9 +1,15 @@
 {
   "projects": [
     {
+      "name" : "Crane Service Systems",
+      "id" : "crane-service-systems",
+      "description": "Icon design for a mobile application implemented for our friends at Crane Service Systems to help them automate their crane inspection and repair workflows",
+      "icons": ["fa-paint-brush", "fa-mobile"]
+    },
+    {
       "name" : "Drone",
       "id" : "drone",
-      "description": "A 3D web application that allows the user to enjoy visual and auditory experiences by freely navigating within its environment.",
+      "description": "A 3D web application that allows the user to enjoy visual and auditory experiences by freely navigating within its environment",
       "icons": ["fa-html5", "fa-css3", "fa-video-camera", "fa-cube", "fa-code"]
     },
     {
@@ -27,112 +33,134 @@
     {
       "name" : "Agfa Deploy",
       "id" : "agfa-deploy",
+      "description": "Logo design for Agfa's, now defunct, software delivery solution for clustered applications",
       "icons": ["fa-paint-brush"]
     },
     {
       "name" : "Bloom",
       "id" : "bloom",
+      "description" : "3D animation based on computer simulations of natural systems created using Processing, Blender and Ableton Live",
       "icons" : ["fa-video-camera", "fa-music", "fa-code"]
     },
     {
       "name" : "Pink Chipotle",
       "id" : "pink-chipotle",
+      "description" : "Traditional Mexican and Pre-hispanic food blog",
       "icons" : ["fa-html5", "fa-css3", "fa-cutlery"]
     },
     {
       "name" : "The Sofa Kings",
       "id" : "the-sofa-kings",
+      "description" : "Taking inspiration from classic Funk and Jazz as well as modern improvisational and jam bands, the Sofa Kings are the next generation of psychedelic jam music",
       "icons" : ["fa-music", "fa-paint-brush"]
     },
     {
       "name" : "Q",
       "id" : "q",
+      "description" : "Q is a soft MIDI controller that uses particle streams and note nodes to generate MIDI messages",
       "icons" : ["fa-music", "fa-code"]
     },
     {
       "name" : "eSpire",
       "id" : "espire",
+      "description" : "Logo design for eSpire",
       "icons" : ["fa-paint-brush"]
     },
     {
       "name" : "GeeBee",
       "id" : "geebee",
+      "description" : "Miscelaneous design work for GeeBee Pedals",
       "icons" : ["fa-paint-brush"]
     },
     {
       "name" : "The Sofa Kings",
       "id" : "the-sofa-kings-1",
-      "icons" : []
+      "description" : "Cover proposal for The Sofa Kings",
+      "icons" : ["fa-paint-brush"]
     },
     {
       "name" : "Your Time Boutique",
       "id" : "your-time-boutique",
-      "icons" : []
+      "description" : "Web design for Your Time Boutique",
+      "icons" : ["fa-paint-brush", "fa-html5", "fa-css3", "fa-code"]
     },
     {
       "name" : "MIDIWorm",
       "id" : "midiworm",
-      "icons" : []
+      "description" : "MidiWorm is yet another soft MIDI controller",
+      "icons" : ["fa-music", "fa-code"]
     },
     {
       "name" : "Tape",
       "id" : "tape",
-      "icons" : []
+      "description" : "Tape pretends to be a tribute to the musicians that experimented with tape machines and tape loops in the 50s and 60s",
+      "icons" : ["fa-music", "fa-code", "fa-paint-brush"]
     },
     {
       "name" : "Bubbles",
       "id" : "bubbles",
-      "icons" : []
+      "description" : "Bubbles is a soft MIDI controller that receives MIDI messages from other MIDI controlers",
+      "icons" : ["fa-music", "fa-code"]
     },
     {
       "name" : "Marvin",
       "id" : "marvin",
-      "icons" : []
+      "description" : "Marvin is a three-dimensional image visualization and processing tool developed in C++",
+      "icons" : ["fa-code", "fa-cube"]
     },
     {
       "name" : "The Vinyl Revival",
       "id" : "the-vinyl-revival",
-      "icons" : []
+      "description" : "Poster illustration for The Vinyl Revival",
+      "icons" : ["fa-music", "fa-paint-brush"]
     },
     {
       "name" : "Spanish Solutions",
       "id" : "spanish-solutions",
-      "icons" : []
+      "description" : "Web design for Toronto based company Spanish Solutions",
+      "icons" : ["fa-html5", "fa-css3"]
     },
     {
       "name" : "Smarter Resources",
       "id" : "smarter-resources",
-      "icons" : []
+      "description" : "Logo proposal for Smarter Resources",
+      "icons" : ["fa-paint-brush"]
     },
     {
       "name" : "Druidas",
       "id" : "druidas",
-      "icons" : []
+      "description" : "Graphic design for Druidas‘ self titled album",
+      "icons" : ["fa-paint-brush", "fa-music"]
     },
     {
       "name" : "Rhino Works",
       "id" : "rhino-works",
-      "icons" : []
+      "description" : "Logo proposal for Rhino Works",
+      "icons" : ["fa-paint-brush"]
     },
     {
       "name" : "Give & Get Network",
       "id" : "give-n-get-network",
-      "icons" : []
+      "description" : "Logo design for the Give and Get Network of KW",
+      "icons" : ["fa-paint-brush"]
     },
     {
       "name" : "The Rambler",
       "id" : "the-rambler",
-      "icons" : []
+      "description" : "Web design proposals for The Rambler",
+      "icons" : ["fa-paint-brush", "fa-html5", "fa-css3"]
     },
     {
       "name" : "Non-Violence Festival",
       "id" : "non-violence-festival",
-      "icons" : []
+      "description" : "Poster proposal for the Non-Violence Festival",
+      "icons" : ["fa-paint-brush"]
     },
     {
       "name" : "The Tree Within",
       "id" : "the-tree-within",
-      "icons" : []
+      "description" : "Series of B&W illustrations for The Tree Within",
+      "icons" : ["fa-paint-brush"]
     }
   ],
   "colors" : [

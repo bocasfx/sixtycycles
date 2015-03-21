@@ -2,7 +2,7 @@
 @import "font-awesome"
 
 $highlightColor: #FD0066
-$descriptionColor: #CCC
+$lightDarkColor: #CCC
 $iconColor: #777
 $lightTextColor: #FFF
 $mediumDarkColor: #666
@@ -17,6 +17,8 @@ $heavyWeight: 700
 $boxShadow: 3px 3px 10px 3px #CCC
 $videoMargin: 50px 20px 20px 20px
 
+$mediumWidth: 480px
+
 // Gradients
 $darkGradient1: #484e55
 $darkGradient2: #3a3f44
@@ -29,8 +31,23 @@ $darkGradient3: #313539
   background: -moz-linear-gradient($step1, $step2 60%, $step3)
   background: linear-gradient($step1, $step2 60%, $step3)
 
+body
+  font-family: Verdana,Geneva,sans-serif
+  margin-top: 30px
+  @media only screen and (min-width: 768px)
+    margin-top: 100px
+    margin-bottom: 50px
+
+a
+  text-decoration: none
+  outline: 0
+  color: $highlightColor
+  &:hover
+    text-decoration: none
+    outline: 0
+    color: $mediumDarkColor
+
 header
-  display: block
   padding: 10px 0 10px 50px
   width: 100%
   color: $highlightColor
@@ -40,15 +57,20 @@ header
   top: 0
   left: 0
   z-index: 999
+  div
+    display: inline
 
-a:hover
-  text-decoration: none
-
-body
-  font-family: Verdana,Geneva,sans-serif
-  margin-top: 50px
-  @media only screen and (min-width: 768px)
-    margin-top: 100px
+.aboot
+  right: 30px
+  position: absolute
+  font-size: 0.7em
+  margin-top: 3px
+  a
+    color: $mediumDarkColor
+    outline: 0
+    text-decoration: none
+    &:hover
+      color: $highlightColor
 
 .right
   margin-right: 0
@@ -98,10 +120,10 @@ body
 
 .back-description
   margin: 20px 0 20px 20px
-  color: $descriptionColor
+  color: $lightDarkColor
 
 .cell-icon
-  margin-left: 5px
+  margin: 5px 0 0 5px
   color: $iconColor
 
 .col-md-4
@@ -114,7 +136,7 @@ body
   margin-right: auto
   margin-top: 0
   @media only screen and (min-width: 768px)
-    width: 80%
+    width: 70%
   @media only screen and (min-width: 1281px)
     width: 1024px
 
@@ -127,22 +149,21 @@ body
 .sc-button
   @include bg-gradient($darkGradient1, $darkGradient2, $darkGradient3)
   color: $lightTextColor
+  outline: 0
   &:hover
     color: $highlightColor
+  &:active
+    @include bg-gradient($darkGradient1, $darkGradient2, $darkGradient3)
+    color: $lightTextColor
+    outline: 0
+  
 
 .modal.fade .modal-dialog
-  -webkit-transform: translate(0,0%)
-  -ms-transform: translate(0,0%)
-  transform: translate(0,0%)
-  -webkit-transition: -webkit-transform .5s ease-out
-  -moz-transition: -moz-transform .5s ease-out
-  -o-transition: -o-transform .5s ease-out
-  transition: transform .5s ease-out
-  -webkit-transition: opacity .5s
-  -moz-transition: opacity .5s
-  -ms-transition: opacity .5s
-  -o-transition: opacity .5s
-  transition: opacity .5s
+  -webkit-transform: translate(0,0)
+  -moz-transform: translate(0,0)
+  -o-transform: translate(0,0)
+  -ms-transform: translate(0,0)
+  transform: translate(0,0)
 
 .modal-link, &:visited
   color: $highlightColor
@@ -156,7 +177,8 @@ body
   border: 10px solid #FFF
 
 .sc-modal-text
-  margin: 20px 20px 0 20px
+  margin: 50px auto 0 auto
+  width: 80%
   text-align: justify
 
 .sc-modal-video
@@ -182,3 +204,54 @@ body
 
 .sc-star-o
   color: #CCC
+
+.sc-medium-img
+  width: 80%
+  @media only screen and (min-width: 768px)
+    width: $mediumWidth
+
+.aboot-icons
+  color: $highlightColor
+  margin: 5px 0 40px 0
+  i
+    margin: 0 5px 0 5px
+
+.sc-profile-img
+  width: 100px
+  height: 100px
+  border-radius: 50px
+  -webkit-border-radius: 50px
+  -moz-border-radius: 50px
+  -o-border-radius: 50px
+  background: url(/img/about/profile.jpg) no-repeat
+  margin: 0 25px 20px 25px
+  box-shadow: $boxShadow
+  float: left
+
+.sc-aboot-modal
+  width: 100%
+  @media only screen and (min-width: 768px)
+    width: 50%
+
+.sc-aboot-footer
+  height: 50px
+  padding-top: 0
+  border: none
+
+.sc-aboot-description
+  margin: 40px 25px 0 25px
+  text-align: justify
+  color: $mediumDarkColor
+
+.sc-aboot-social
+  font-size: 2em
+
+.sc-aboot-title
+  font-size: 2em
+  color: $mediumDarkColor
+
+.sc-bandcamp-player
+  border: 0
+  width: 80%
+  height: 120px
+  margin-top: 25px
