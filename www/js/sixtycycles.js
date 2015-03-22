@@ -4,14 +4,16 @@
 
     createCells : function () {
       var idx = 0;
+      // var colorIdx = Math.floor((Math.random() * 3));
+      var colorIdx = 0;
 
       for (var i = 0; i < sc.projects.length; i++) {
 
-        var bgidx = (idx % sc.colors.length);
-        var fgidx = ((idx + 2) % sc.colors.length);
+        var bgidx = (idx % sc.colors[colorIdx].length);
+        var fgidx = ((idx + 2) % sc.colors[colorIdx].length);
 
-        bgcolor = sc.colors[bgidx];
-        fgcolor = sc.colors[fgidx];
+        bgcolor = sc.colors[colorIdx][bgidx];
+        fgcolor = sc.colors[colorIdx][fgidx];
 
 
         var name = sc.projects[i].name;
@@ -24,7 +26,14 @@
           "data-toggle": "modal",
           "data-target": "#sc-modal"
         });
-        cellAnchor.click({"id": sc.projects[i].id}, sc.populateModal);
+
+        var projectInfo = {
+          "id": sc.projects[i].id,
+          "name": sc.projects[i].name,
+          "date": sc.projects[i].date
+        };
+
+        cellAnchor.click(projectInfo, sc.populateModal);
         cellAnchor.css({
           "outline": 0,
           "text-decoration": "none"
@@ -70,12 +79,16 @@
     },
 
     populateModal: function(event) {
-      $("#sc-modal").empty();
-      $("#sc-modal").load("./modals/" + event.data.id + ".html");
+      $("#sc-modal .modal-body").empty();
+      $("#sc-modal .modal-title").text(event.data.name);
+      $("#sc-modal .modal-date").text(event.data.date);
+      $("#sc-modal .modal-body").load("./modals/" + event.data.id + ".html");
     },
 
     generaterAboutSection: function() {
-      $(".aboot").click({"id": "about"}, sc.populateModal);
+      $(".aboot").click(function() {
+        $("#aboot-modal").load("./modals/about.html");
+      });
     },
 
     unmentionableBrowserDetected: function() {

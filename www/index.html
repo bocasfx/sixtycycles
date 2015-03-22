@@ -1,24 +1,47 @@
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Sixty Cycles is a collection of all the independent work that I've done throughout the years.">.
-		<title>sixtycycles</title>
-		<link rel="stylesheet" href="css/sixtycycles.min.css">
-	</head>
-	<body>
-		<header>
-			<div>sixtycycles</div>
-			<div class="aboot"><a href="#" data-toggle="modal" data-target="#sc-modal">aboot</a></div>
-		</header>
-		<div class="container">
-			<div id="cell-container" class="row"></div>
-		</div>
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="js/sixtycycles.js"></script>
-		<div class="modal fade" data-easein="pulse" id="sc-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sixty Cycles is a collection of all the independent work that I've done throughout the years.">.
+    <title>sixtycycles</title>
+    <link rel="stylesheet" href="css/sixtycycles.min.css">
+  </head>
+  <body>
+    <header>
+      <div>sixtycycles</div>
+      <div class="aboot"><a href="#" data-toggle="modal" data-target="#aboot-modal">aboot</a></div>
+    </header>
+    <div class="container">
+      <div id="cell-container" class="row"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/sixtycycles.js"></script>
+
+    <!-- Modal -->
+
+    <div class="modal fade" data-easein="pulse" id="sc-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title"></h4><span class="modal-date"></span>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Adiós</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" data-easein="pulse" id="aboot-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+
+  </body>
 </html>
