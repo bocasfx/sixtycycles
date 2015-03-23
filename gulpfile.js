@@ -11,7 +11,8 @@ var config = {
   sassPath: './sass',
   bowerDir: './bower_components',
   sass: ['./sass/**/*.scss', './sass/**/*.sass'],
-  modals: ['./www/modals/**/*.html', './www/**/*.html']
+  modals: ['./www/modals/**/*.html', './www/**/*.html'],
+  js: ['./www/js/**/*.js']
 };
 
 gulp.task('bower', function() {
@@ -28,6 +29,7 @@ gulp.task('watch', function () {
   livereload.listen();
   gulp.watch(config.sass, ['sass']);
   gulp.watch(config.modals, ['reload']);
+  gulp.watch(config.js, ['reload']);
 });
 
 gulp.task('reload', function() {

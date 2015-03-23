@@ -2,30 +2,27 @@
 
   var sc = {
 
+    colorIdx: 0,
+
     createCells : function () {
-      var idx = 0;
       // var colorIdx = Math.floor((Math.random() * 3));
-      var colorIdx = 0;
 
       for (var i = 0; i < sc.projects.length; i++) {
-        sc.createCell(i, idx, colorIdx);
-        idx += 1;
+        sc.createCell(i);
       }
     },
 
-    createCell: function(i, idx, colorIdx) {
+    createCell: function(i) {
 
-      var bgidx = (idx % sc.colors[colorIdx].length);
-      var fgidx = ((idx + 2) % sc.colors[colorIdx].length);
+      var bgidx = (i % sc.colors[sc.colorIdx].length);
+      var fgidx = ((i + 2) % sc.colors[sc.colorIdx].length);
 
-      bgcolor = sc.colors[colorIdx][bgidx];
-      fgcolor = sc.colors[colorIdx][fgidx];
-
+      bgcolor = sc.colors[sc.colorIdx][bgidx];
+      fgcolor = sc.colors[sc.colorIdx][fgidx];
 
       var name = sc.projects[i].name;
       var desc = sc.projects[i].description;
       var icons = sc.projects[i].icons;
-
 
       var cellAnchor = $("<a>", {
         "href": "#",
@@ -109,8 +106,33 @@
     },
 
     applyFilter: function() {
-      console.log(this);
+      $("#filter-bar a").removeClass('active');
+      $(this).addClass('active');
+
       $("#filter-bar").toggleClass('filter-bar-hidden');
+      sc.hideCells();
+    },
+
+    hideCells: function(cell) {
+
+      var cells = $(".cell");
+
+      $(cells[cells.length-1]).bind('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+        $("#cell-container").empty();
+        sc.createCells();
+      });
+
+      for (var i = 0; i < cells.length; i++) {
+        $(cells[i]).css({
+          "-webkit-transition": "all " + (0.5 + i/20) + "s",
+          "-moz-transition": "all " + (0.5 + i/20) + "s",
+          "-o-transition": "all " + (0.5 + i/20) + "s",
+          "visibility": "hidden",
+          "opacity": 0,
+          "height": 0
+        });
+      }
+      
     },
 
     init: function(data) {
