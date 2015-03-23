@@ -78,15 +78,15 @@
       "date" : "Apr 11, 2013"
     },
     {
-      "name" : "GeeBee",
-      "id" : "geebee",
+      "name" : "GeeBee Pedals",
+      "id" : "geebee-pedals-2",
       "description" : "Miscelaneous design work for GeeBee Pedals",
       "icons" : ["fa-paint-brush"],
       "date" : "Mar 11, 2013"
     },
     {
       "name" : "The Sofa Kings",
-      "id" : "the-sofa-kings-1",
+      "id" : "the-sofa-kings-2",
       "description" : "Cover proposal for The Sofa Kings",
       "icons" : ["fa-paint-brush"],
       "date" : "Jan 17, 2013"
@@ -100,7 +100,7 @@
     },
     {
       "name" : "MIDIWorm",
-      "id" : "midiworm",
+      "id" : "midi-worm",
       "description" : "MidiWorm is yet another soft MIDI controller",
       "icons" : ["fa-music", "fa-code"],
       "date" : "Aug 2, 2012"

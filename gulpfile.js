@@ -10,7 +10,8 @@ var $ = require('gulp-load-plugins')({lazy: true});
 var config = {
   sassPath: './sass',
   bowerDir: './bower_components',
-  sass: ['./sass/**/*.scss', './sass/**/*.sass']
+  sass: ['./sass/**/*.scss', './sass/**/*.sass'],
+  modals: ['./www/modals/**/*.html', './www/**/*.html']
 };
 
 gulp.task('bower', function() {
@@ -26,6 +27,13 @@ gulp.task('icons', function() {
 gulp.task('watch', function () {
   livereload.listen();
   gulp.watch(config.sass, ['sass']);
+  gulp.watch(config.modals, ['reload']);
+});
+
+gulp.task('reload', function() {
+  return gulp
+    .src(config.modals)
+    .pipe(livereload());
 });
 
 gulp.task('sass', function() {

@@ -8,69 +8,72 @@
       var colorIdx = 0;
 
       for (var i = 0; i < sc.projects.length; i++) {
-
-        var bgidx = (idx % sc.colors[colorIdx].length);
-        var fgidx = ((idx + 2) % sc.colors[colorIdx].length);
-
-        bgcolor = sc.colors[colorIdx][bgidx];
-        fgcolor = sc.colors[colorIdx][fgidx];
-
-
-        var name = sc.projects[i].name;
-        var desc = sc.projects[i].description;
-        var icons = sc.projects[i].icons;
-
-
-        var cellAnchor = $("<a>", {
-          "href": "#",
-          "data-toggle": "modal",
-          "data-target": "#sc-modal"
-        });
-
-        var projectInfo = {
-          "id": sc.projects[i].id,
-          "name": sc.projects[i].name,
-          "date": sc.projects[i].date
-        };
-
-        cellAnchor.click(projectInfo, sc.populateModal);
-        cellAnchor.css({
-          "outline": 0,
-          "text-decoration": "none"
-        });
-        
-        var innerCell = $("<div>", {"class": "inner-cell cell-link"});
-        innerCell.css({
-          "background-color": bgcolor,
-          "color": fgcolor
-        });
-        innerCell.text(name);
-        
-        var backCell = $("<div>", {"class": "back-cell right"});
-        
-        var backTitle = $("<div>");
-        backTitle.text(name);
-        var backDescription = $("<div>", {"class": "back-description"});
-        backDescription.text(desc);
-        backCell.append(backTitle);
-
-        var iconPrefs = {
-          backCell: backCell
-        };
-
-        icons.forEach(sc.appendIcon, iconPrefs);
-        backCell.append(backDescription);
-
-        cellAnchor.append(innerCell);
-
-        var cell = $("<div>", {"class": "col-md-4 cell right"});
-        cell.append(cellAnchor);
-        cell.append(backCell);
-
-        $( "#cell-container" ).append( cell );
-
+        sc.createCell(i, idx, colorIdx);
         idx += 1;
       }
+    },
+
+    createCell: function(i, idx, colorIdx) {
+
+      var bgidx = (idx % sc.colors[colorIdx].length);
+      var fgidx = ((idx + 2) % sc.colors[colorIdx].length);
+
+      bgcolor = sc.colors[colorIdx][bgidx];
+      fgcolor = sc.colors[colorIdx][fgidx];
+
+
+      var name = sc.projects[i].name;
+      var desc = sc.projects[i].description;
+      var icons = sc.projects[i].icons;
+
+
+      var cellAnchor = $("<a>", {
+        "href": "#",
+        "data-toggle": "modal",
+        "data-target": "#sc-modal"
+      });
+
+      var projectInfo = {
+        "id": sc.projects[i].id,
+        "name": sc.projects[i].name,
+        "date": sc.projects[i].date
+      };
+
+      cellAnchor.click(projectInfo, sc.populateModal);
+      cellAnchor.css({
+        "outline": 0,
+        "text-decoration": "none"
+      });
+      
+      var innerCell = $("<div>", {"class": "inner-cell cell-link"});
+      innerCell.css({
+        "background-color": bgcolor,
+        "color": fgcolor
+      });
+      innerCell.text(name);
+      
+      var backCell = $("<div>", {"class": "back-cell right"});
+      
+      var backTitle = $("<div>");
+      backTitle.text(name);
+      var backDescription = $("<div>", {"class": "back-description"});
+      backDescription.text(desc);
+      backCell.append(backTitle);
+
+      var iconPrefs = {
+        backCell: backCell
+      };
+
+      icons.forEach(sc.appendIcon, iconPrefs);
+      backCell.append(backDescription);
+
+      cellAnchor.append(innerCell);
+
+      var cell = $("<div>", {"class": "col-md-4 cell right"});
+      cell.append(cellAnchor);
+      cell.append(backCell);
+
+      $( "#cell-container" ).append( cell );
     },
 
     appendIcon: function(item, index) {
@@ -86,7 +89,7 @@
     },
 
     generaterAboutSection: function() {
-      $(".aboot").click(function() {
+      $("#aboot").click(function() {
         $("#aboot-modal").load("./modals/about.html");
       });
     },
@@ -99,6 +102,26 @@
         return true;
       }
       return false;
+    },
+
+    toggleFilterBar: function() {
+      $("#filter-bar").toggleClass('filter-bar-hidden');
+    },
+
+    applyFilter: function() {
+      console.log(this);
+      $("#filter-bar").toggleClass('filter-bar-hidden');
+    },
+
+    init: function(data) {
+      sc.projects = data.projects;
+      sc.colors = data.colors;
+      sc.generaterAboutSection();
+
+      $("#filter-button").click(sc.toggleFilterBar);
+      $("#filter-bar a").click(sc.applyFilter);
+
+      sc.createCells();
     }
   };
 
@@ -108,10 +131,7 @@
       return;
     }
     $.getJSON("config.json", function(data) {
-      sc.projects = data.projects;
-      sc.colors = data.colors;
-      sc.generaterAboutSection();
-      sc.createCells();
+      sc.init(data);
     });
   });
 })();
