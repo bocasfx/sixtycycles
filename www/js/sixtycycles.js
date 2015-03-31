@@ -27,12 +27,14 @@
     },
 
     hideContentAndShowCells: function() {
-      $("#project-content").empty();
-      $("#project-title").empty();
-      $("#project-date").empty();
-      $("#cells-button").hide('slow');
-      $(".filter-container").show("slow");
-      sc.createCells();
+      $("#project-container").fadeOut("slow", function() {
+        $("#project-content").empty();
+        $("#project-title").empty();
+        $("#project-date").empty();
+        $("#cells-button").fadeOut('slow');
+        $(".filter-container").fadeIn("slow");
+        sc.createCells();
+      });
     },
 
     hideCellsAndShowContent: function(params) {
@@ -48,13 +50,14 @@
         }
 
         if (params.type === "project") {
-          // $("#sc-modal .modal-title").text(event.data.name);
-          // $("#sc-modal .modal-date").text(event.data.date);
-          $("#project-title").html(params.content.name);
-          $("#project-date").html(params.content.date);
-          $("#project-content").load("./modals/" + params.content.id + ".html");
-          $("#cells-button").show('slow');
-          $(".filter-container").hide("slow");
+          var url = "./modals/" + params.content.id + ".html";
+          $("#project-content").load(url, function(response,status,xhr) {
+            $("#project-title").html(params.content.name);
+            $("#project-date").html(params.content.date);
+            $("#project-container").fadeIn("slow");
+            $("#cells-button").fadeIn('slow');
+            $(".filter-container").fadeOut("slow");
+          });
         }
       });
 
@@ -85,14 +88,15 @@
       var desc = sc.projects[i].description;
       var icons = sc.projects[i].icons;
       
-
+      // Apply category filter
       if ( filter !== undefined && $.inArray(filter, icons) < 0 ) {
         return;
       }
 
-      var cellAnchor = $("<a>", {
-        "href": "#",
-        "onclick": "return false;"
+      // The main cell
+      var cell = $("<div>", {"class": "col-md-4 cell right"});
+      cell.css({
+        "background-color": bgcolor
       });
 
       var projectInfo = {
@@ -101,46 +105,48 @@
         "date": sc.projects[i].date
       };
 
-      cellAnchor.click(projectInfo, sc.loadProject);
-      cellAnchor.css({
-        "outline": 0,
-        "text-decoration": "none"
-      });
-      
-      var innerCell = $("<div>", {"class": "inner-cell cell-link"});
-      innerCell.css({
-        "background-color": bgcolor,
-        "color": fgcolor
-      });
-      innerCell.text(name);
-      
-      var backCell = $("<div>", {"class": "back-cell right"});
-      
-      var backTitle = $("<div>");
-      backTitle.text(name);
-      var backDescription = $("<div>", {"class": "back-description"});
-      backDescription.text(desc);
-      backCell.append(backTitle);
+      cell.click(projectInfo, sc.loadProject);
 
+      // Project name
+      var cellName = $("<div>", {
+        "class": "cell-name"
+      });
+      cellName.text(name);
+      cellName.css({
+        "color": fgcolor,
+        "transition": "all .5s",
+        "-ms-transition": "all .5s",
+        "-webkit-transition": "all .5s",
+        "-moz-transition": "all .5s",
+        "-o-transition": "all .5s"
+      });
+
+      // Icons
+      var iconContainer = $('<div>', {
+        "class": "cell-icons"
+      });
       var iconPrefs = {
-        backCell: backCell
+        domElement: iconContainer
       };
 
       icons.forEach(sc.appendIcon, iconPrefs);
-      backCell.append(backDescription);
 
-      cellAnchor.append(innerCell);
+      // Description
+      var description = $("<div>", {
+        "class": "cell-description"
+      });
+      description.text(desc);
 
-      var cell = $("<div>", {"class": "col-md-4 cell right"});
-      cell.append(cellAnchor);
-      cell.append(backCell);
-
-      $( "#cell-container" ).append( cell );
+      // Append stuff
+      cell.append(cellName);
+      cell.append(iconContainer);
+      cell.append(description);
+      $("#cell-container").append( cell );
     },
 
     appendIcon: function(item, index) {
       var cellIcon = $("<span>", {"class": "cell-icon fa " + item});
-      this.backCell.append(cellIcon);
+      this.domElement.append(cellIcon);
     },
 
     loadProject: function(event) {
@@ -149,10 +155,6 @@
         "content": event.data
       };
       sc.hideCellsAndShowContent(params);
-      // $("#sc-modal .modal-body").empty();
-      // $("#sc-modal .modal-title").text(event.data.name);
-      // $("#sc-modal .modal-date").text(event.data.date);
-      // $("#sc-modal .modal-body").load("./modals/" + event.data.id + ".html");
     },
 
     generaterAboutSection: function() {
@@ -204,6 +206,7 @@
       $("#filter-button").click(sc.toggleFilterBar);
       $("#filter-bar a").click(sc.applyFilter);
       $("#cells-button").click(sc.hideContentAndShowCells);
+      $("#main-header").click(sc.hideContentAndShowCells);
 
       // sc.colorIdx = Math.floor((Math.random() * 3));
 

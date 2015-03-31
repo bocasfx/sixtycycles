@@ -8,12 +8,12 @@ $lightTextColor: #FFF
 $mediumDarkColor: #666
 
 $fontSize: 1em
-$headerFontSize: 1.5em
+$headerFontSize: 2em
 
-$cellHeight: 200px
+$cellHeight: 225px
 $heavyWeight: 700
 
-$boxShadow: 3px 3px 10px 3px #CCC
+$boxShadow: 1px 1px 10px 1px #CCC
 $videoMargin: 50px 20px 20px 20px
 
 $mediumWidth: 380px
@@ -35,15 +35,18 @@ $lightGradient3: #70787d
   background: linear-gradient($step1, $step2 60%, $step3)
 
 @mixin transition
+  transition: all .5s
+  -ms-transition: all .5s 
   -webkit-transition: all .5s
   -moz-transition: all .5s
   -o-transition: all .5s
 
 body
-  font-family: Verdana,Geneva,sans-serif
-  margin-top: 90px
+  font-family: 'Raleway', sans-serif;
+  margin-top: 30px
+  letter-spacing: 1px
   @media only screen and (min-width: 768px)
-    margin-top: 100px
+    margin-top: 50px
     margin-bottom: 50px
 
 a
@@ -56,26 +59,29 @@ a
     color: $mediumDarkColor
 
 header
-  .navbar
-    border: none
-  .container-fluid
-    @include bg-gradient($darkGradient1, $darkGradient2, $darkGradient3)
-    .navbar-brand
-      color: $highlightColor
-  .navbar-toggle
-    border: none
-    &:hover
-      background: inherit
+  font-size: $headerFontSize
+  margin-bottom: 50px
+  @media only screen and (min-width: 768px)
+    margin-bottom: 75px
+
+#main-header
+  color: $mediumDarkColor
+  outline: 0
+  text-decoration: none
+  // font-weight: 400
 
 img
-  width: 90%
+  width: 100%
   margin-top: 40px
   border: 1px solid $lightDarkColor
 
 .right
-  margin-right: 0
-  margin-left: auto
   text-align: right
+
+.left
+  margin-left: 0
+  margin-right: auto
+  text-align: left
 
 .center
   margin-left: auto
@@ -126,62 +132,50 @@ img
 
 .cell
   height: $cellHeight
-  background-position: center
-  background-repeat: no-repeat
   opacity: 0
+  padding: 20px
+  cursor: pointer
+  border: 1px solid white
+  // margin: 3px
+  &:hover
+    background-color: $darkGradient3 !important
+  &:hover > .cell-name
+    color: $highlightColor !important
+    @include transition
+  &:hover > .cell-icons
+    opacity: 1 !important
+    color: $iconColor
+    @include transition
+  &:hover > .cell-description
+    opacity: 1 !important
+    @include transition
 
-.cell-link
-  text-decoration: none
+.cell-name
+  opacity: 1
 
-.inner-cell
-  height: $cellHeight
-  font-size: $fontSize
-  padding-right: 20px
-  padding-top: 20px
-  line-height: .8
-  text-decoration: none
+.cell-icons
+  opacity: 0
   @include transition
 
-.inner-cell:hover
+.cell-description
   opacity: 0
-  @include transition
-
-.back-cell
-  position: absolute
-  text-align: right
-  padding: 16px 20px 0 0
-  width: 100%
-  top: 0
-  z-index: -1
-  color: $highlightColor
-  @include bg-gradient($darkGradient1, $darkGradient2, $darkGradient3)
-  height: $cellHeight
-
-.back-description
-  margin: 20px 0 20px 20px
+  margin-top: 15px
   color: $lightDarkColor
+  @include transition
 
 .cell-icon
   margin: 5px 0 0 5px
-  color: $iconColor
-
-.col-md-4
-  padding-left: 0
-  padding-right: 0
-
-.btn-default
-  @include bg-gradient($darkGradient1, $darkGradient2, $darkGradient3)
-  color: $lightTextColor
-  &:hover
-    color: $highlightColor
-    border: 1px solid transparent
 
 // -------------------------------------------------------------------
 // PROJECTS
 // -------------------------------------------------------------------
 
+#project-container
+  padding: 40px
+  width: 75%
+
 #project-content
-  width: 70%
+  width: 90%
 
 #project-title
   font-size: 2em
@@ -195,6 +189,16 @@ img
   color: $lightDarkColor
   &:hover
     color: $mediumDarkColor
+
+.sc-bandcamp-player
+  border: 0
+  width: 80%
+  height: 120px
+  margin-top: 40px
+
+.project-description
+  text-align: justify
+  margin-bottom: 25px
 
 
 // -------------------------------------------------------------------
@@ -229,66 +233,19 @@ img
   &:hover
     color: $mediumDarkColor
 
-.modal-title
-  color: $highlightColor
-  text-align: left
-  margin-left: 20px
-
 .modal-header
   @include bg-gradient($darkGradient1, $darkGradient2, $darkGradient3)
   border-bottom: 2px solid $mediumDarkColor
 
-.modal-footer
-  @include bg-gradient($lightGradient1, $lightGradient2, $lightGradient3)
-  border-top: 1px solid $lightGradient3
-  padding-top: 7px
-  padding-bottom: 7px
-  margin-top: 20px
-
-.modal-body
-  .well
-    width: 90%
-    text-align: justify
-    margin-top: 20px
-    margin-bottom: 0
-    border: 1px solid $lightDarkColor
-
-.modal-description
-  text-align: justify
-
-.modal-date
-  color: $mediumDarkColor
-  margin-left: 20px
-
-.embed-responsive
-  width: 90%
-  margin-top: 40px
-
-.sc-medium-img
-  width: 80%
-  @media only screen and (min-width: 768px)
-    width: $mediumWidth
-
-.sc-bandcamp-player
-  border: 0
-  width: 80%
-  height: 120px
-  margin-top: 40px
-
-.table-responsive
-  border: none
-  // margin: 20px 40px 0 40px
-  .table>tbody>tr>td
-    border: none
-    font-size: 0.8em
-    white-space: normal
-  .table>tbody>tr>td:first-child
-    font-weight: bold
-    color: $mediumDarkColor
-
 // -------------------------------------------------------------------
 // ABOOT MODAL
 // -------------------------------------------------------------------
+
+#aboot
+  color: $lightDarkColor
+  outline: 0
+  text-decoration: none
+  font-size:  0.6em
 
 .aboot-icons
   color: $highlightColor
