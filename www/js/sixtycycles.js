@@ -4,12 +4,20 @@
 
     colorIdx: 0,
 
+    filter: undefined,
+
+    cellsActive: true,
+
     createCells : function (filter) {
+      window.sr = null;
+      var delay = 0;
       for (var i = 0; i < sc.projects.length; i++) {
-        sc.createCell(i, filter);
+        sc.createCell(i, filter, delay);
+        delay += 0.05;
       }
 
-      sc.showCells();
+      window.sr = new scrollReveal();
+      // sc.showCells();
     },
 
     showCells: function() {
@@ -27,14 +35,16 @@
     },
 
     hideContentAndShowCells: function() {
-      $("#project-container").fadeOut("slow", function() {
-        $("#project-content").empty();
-        $("#project-title").empty();
-        $("#project-date").empty();
-        $("#cells-button").fadeOut('slow');
-        $(".filter-container").fadeIn("slow");
-        sc.createCells();
-      });
+      if(!sc.cellsActive) {
+        $("#project-container").fadeOut('slow', function() {
+          $("#project-content").empty();
+          $("#project-title").empty();
+          $("#project-date").empty();
+          $(".filter-container").fadeIn('slow');
+          sc.createCells(sc.filter);
+          sc.cellsActive = true;
+        });
+      }
     },
 
     hideCellsAndShowContent: function(params) {
@@ -54,12 +64,19 @@
           $("#project-content").load(url, function(response,status,xhr) {
             $("#project-title").html(params.content.name);
             $("#project-date").html(params.content.date);
-            $("#project-container").fadeIn("slow");
+            $("#project-description").html(params.content.description);
+            $("#project-url").html(
+              "<a class='project-link' target='_blank' href='" + params.content.url + "'>" + params.content.url + "</a>"
+            );
+            $("#project-container").fadeIn('slow');
             $("#cells-button").fadeIn('slow');
-            $(".filter-container").fadeOut("slow");
+            $(".filter-container").fadeOut('slow');
+            sc.cellsActive = false;
           });
         }
       });
+
+      $("html, body").animate({ scrollTop: 0 }, "slow");
 
       for (var i = cells.length-1; i >= 0; i--) {
         var factor = cells.length - i;
@@ -76,7 +93,7 @@
       
     },
 
-    createCell: function(i, filter) {
+    createCell: function(i, filter, delay) {
 
       var bgidx = (i % sc.colors[sc.colorIdx].length);
       var fgidx = ((i + 2) % sc.colors[sc.colorIdx].length);
@@ -94,18 +111,16 @@
       }
 
       // The main cell
-      var cell = $("<div>", {"class": "col-md-4 cell right"});
+      var cell = $("<div>", {
+        "class": "col-md-4 cell right",
+        "data-sr": "wait " + delay + "s, enter left, hustle 20px,"
+      });
+
       cell.css({
         "background-color": bgcolor
       });
 
-      var projectInfo = {
-        "id": sc.projects[i].id,
-        "name": sc.projects[i].name,
-        "date": sc.projects[i].date
-      };
-
-      cell.click(projectInfo, sc.loadProject);
+      cell.click(sc.projects[i], sc.loadProject);
 
       // Project name
       var cellName = $("<div>", {
@@ -135,12 +150,25 @@
       var description = $("<div>", {
         "class": "cell-description"
       });
-      description.text(desc);
+
+      var cellDescription = desc;
+
+      if (cellDescription.length > 255) {
+        cellDescription = cellDescription.slice(0, 255) + "...";
+      }
+
+      description.text(cellDescription);
+
+      // Fade
+      var fade = $("<div>", {
+        "class": "cell-description-fade"
+      });
 
       // Append stuff
       cell.append(cellName);
       cell.append(iconContainer);
       cell.append(description);
+      cell.append(fade);
       $("#cell-container").append( cell );
     },
 
@@ -182,9 +210,12 @@
       $(this).addClass('active');
 
       $("#filter-bar").toggleClass('filter-bar-hidden');
+      
+      sc.filter = sc.extractFilter(this);
+
       var params = {
         "type": "filter",
-        "content": sc.extractFilter(this)
+        "content": sc.filter
       };
       sc.hideCellsAndShowContent(params);
     },
@@ -205,12 +236,11 @@
 
       $("#filter-button").click(sc.toggleFilterBar);
       $("#filter-bar a").click(sc.applyFilter);
-      $("#cells-button").click(sc.hideContentAndShowCells);
       $("#main-header").click(sc.hideContentAndShowCells);
 
       // sc.colorIdx = Math.floor((Math.random() * 3));
 
-      sc.createCells();
+      sc.createCells(sc.filter);
     }
   };
 

@@ -12,7 +12,7 @@ var config = {
   bowerDir: './bower_components',
   sass: ['./sass/**/*.scss', './sass/**/*.sass'],
   modals: ['./www/modals/**/*.html', './www/**/*.html'],
-  js: ['./www/js/**/*.js']
+  js: ['./www/js/**/*.js'],
 };
 
 gulp.task('bower', function() {
@@ -56,4 +56,14 @@ gulp.task('sass', function() {
     .pipe($.rename({extname: '.min.css'}))
     .pipe(gulp.dest('./www/css'))
     .pipe(livereload());
+});
+
+gulp.task('build', function() {
+  return gulp
+    .src([
+      config.bowerDir + '/jquery/dist/jquery.min.js',
+      config.bowerDir + '/jquery/dist/jquery.min.map',
+      config.bowerDir + '/bootstrap/dist/js/bootstrap.min.js'
+    ])
+    .pipe(gulp.dest('./www/js'));
 });

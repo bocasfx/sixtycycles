@@ -18,7 +18,6 @@ $videoMargin: 50px 20px 20px 20px
 
 $mediumWidth: 380px
 
-// Gradients
 $darkGradient1: #484e55
 $darkGradient2: #3a3f44
 $darkGradient3: #313539
@@ -62,18 +61,19 @@ header
   font-size: $headerFontSize
   margin-bottom: 50px
   @media only screen and (min-width: 768px)
-    margin-bottom: 75px
+    margin-bottom: 100px
 
 #main-header
   color: $mediumDarkColor
   outline: 0
   text-decoration: none
-  // font-weight: 400
+  @include transition
+  &:hover
+    color: $highlightColor
+    @include transition
 
 img
-  width: 100%
   margin-top: 40px
-  border: 1px solid $lightDarkColor
 
 .right
   text-align: right
@@ -124,21 +124,21 @@ img
   @include transition
   visibility: hidden
 
-
-
 // -------------------------------------------------------------------
 // CELLS
 // -------------------------------------------------------------------
 
 .cell
   height: $cellHeight
-  opacity: 0
+  // opacity: 0
   padding: 20px
   cursor: pointer
   border: 1px solid white
   // margin: 3px
+  @include transition
   &:hover
     background-color: $darkGradient3 !important
+    @include transition
   &:hover > .cell-name
     color: $highlightColor !important
     @include transition
@@ -147,6 +147,9 @@ img
     color: $iconColor
     @include transition
   &:hover > .cell-description
+    opacity: 1 !important
+    @include transition
+  &:hover > .cell-description-fade
     opacity: 1 !important
     @include transition
 
@@ -163,6 +166,17 @@ img
   color: $lightDarkColor
   @include transition
 
+.cell-description-fade
+  opacity: 0
+  position: absolute 
+  bottom: 0 
+  left: 0
+  width: 100% 
+  margin: 0 
+  padding: 50px 0 
+  background-image: linear-gradient(transparent, $darkGradient3)
+  @include transition
+
 .cell-icon
   margin: 5px 0 0 5px
 
@@ -170,25 +184,14 @@ img
 // PROJECTS
 // -------------------------------------------------------------------
 
-#project-container
-  padding: 40px
-  width: 75%
-
-#project-content
-  width: 90%
 
 #project-title
-  font-size: 2em
+  font-size: 1.5em
   color: $highlightColor
 
 #project-date
   color: $lightDarkColor
   margin-bottom: 40px
-
-#cells-button
-  color: $lightDarkColor
-  &:hover
-    color: $mediumDarkColor
 
 .sc-bandcamp-player
   border: 0
@@ -196,7 +199,7 @@ img
   height: 120px
   margin-top: 40px
 
-.project-description
+#project-description
   text-align: justify
   margin-bottom: 25px
 
@@ -242,10 +245,26 @@ img
 // -------------------------------------------------------------------
 
 #aboot
-  color: $lightDarkColor
-  outline: 0
-  text-decoration: none
-  font-size:  0.6em
+  position: absolute
+  top: 10;
+  right: 25px;
+  font-size: 0.7em;
+  &>a
+    color: $lightDarkColor
+    outline: 0
+    text-decoration: none
+    font-size:  1.5em
+    &>span
+      opacity: 0
+      visibility: hidden
+      @include transition
+    &:hover
+      &>span
+        opacity: 1
+        visibility: visible
+        @include transition
+
+  
 
 .aboot-icons
   color: $highlightColor

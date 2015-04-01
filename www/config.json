@@ -5,189 +5,216 @@
       "id" : "crane-service-systems",
       "description" : "Icon design for a mobile application implemented for our friends at Crane Service Systems to help them automate their crane inspection and repair workflows",
       "icons" : ["fa-paint-brush", "fa-mobile"],
-      "date" : "Feb 24, 2015"
+      "date" : "Feb 24, 2015",
+      "url" : ""
     },
     {
       "name" : "Drone",
       "id" : "drone",
       "description" : "A 3D web application that allows the user to enjoy visual and auditory experiences by freely navigating within its environment",
       "icons" : ["fa-html5", "fa-css3", "fa-video-camera", "fa-cube", "fa-code"],
-      "date" : "Jan 31, 2015"
+      "date" : "Jan 31, 2015",
+      "url" : ""
     },
     {
       "name" : "GeeBee Pedals",
       "id" : "geebee-pedals",
       "description" : "Web design for pedals manufacturer GeeBee",
       "icons" : ["fa-html5", "fa-css3"],
-      "date" : "Jan 12, 2015"
+      "date" : "Jan 12, 2015",
+      "url" : ""
     },
     {
       "name" : "Savvy Green",
       "id" : "savvy-green",
       "description" : "Web design proposal for soap manufacturer Savvy Green",
       "icons" : ["fa-html5", "fa-css3"],
-      "date" : "Sep 9, 2014"
+      "date" : "Sep 9, 2014",
+      "url" : ""
     },
     {
       "name" : "Vital Response",
       "id" : "vital-response",
       "description" : "Web design for first aid training company Vital Response",
       "icons" : ["fa-html5", "fa-css3"],
-      "date" : "Sep 9, 2014"
+      "date" : "Sep 9, 2014",
+      "url" : ""
     },
     {
       "name" : "Agfa Deploy",
       "id" : "agfa-deploy",
       "description" : "Logo design for Agfa's, now defunct, software delivery solution for clustered applications",
       "icons" : ["fa-paint-brush"],
-      "date" : "Apr 26, 2014"
+      "date" : "Apr 26, 2014",
+      "url" : ""
     },
     {
       "name" : "Bloom",
       "id" : "bloom",
       "description" : "3D animation based on computer simulations of natural systems created using Processing, Blender and Ableton Live",
       "icons" : ["fa-video-camera", "fa-music", "fa-code"],
-      "date" : "Apr 24, 2014"
+      "date" : "Apr 24, 2014",
+      "url" : ""
     },
     {
       "name" : "Pink Chipotle",
       "id" : "pink-chipotle",
       "description" : "Traditional Mexican and Pre-hispanic food blog",
       "icons" : ["fa-html5", "fa-css3", "fa-cutlery"],
-      "date" : "Nov 8, 2013"
+      "date" : "Nov 8, 2013",
+      "url" : ""
     },
     {
       "name" : "The Sofa Kings",
       "id" : "the-sofa-kings",
-      "description" : "Taking inspiration from classic Funk and Jazz as well as modern improvisational and jam bands, the Sofa Kings are the next generation of psychedelic jam music",
+      "description" : "The Sofa Kings are the next generation of psychedelic jam music. Taking inspiration from classic Funk and Jazz as well as modern improvisational and jam bands, they weave deceptively fluid bass lines with funky and hypnotic drum beats into atmospheric keys and guitar lines that bubble and simmer with rhythm and melody, until they erupt into a soaring celebration of music.",
       "icons" : ["fa-music", "fa-paint-brush"],
-      "date" : "Jun 1, 2013"
+      "date" : "Jun 1, 2013",
+      "url" : "http://thesofakings.bandcamp.com"
     },
     {
       "name" : "Q",
       "id" : "q",
       "description" : "Q is a soft MIDI controller that uses particle streams and note nodes to generate MIDI messages",
       "icons" : ["fa-music", "fa-code"],
-      "date" : "May 11, 2013"
+      "date" : "May 11, 2013",
+      "url" : ""
     },
     {
       "name" : "eSpire",
       "id" : "espire",
       "description" : "Logo design for eSpire",
       "icons" : ["fa-paint-brush"],
-      "date" : "Apr 11, 2013"
+      "date" : "Apr 11, 2013",
+      "url" : ""
     },
     {
       "name" : "GeeBee Pedals",
       "id" : "geebee-pedals-2",
       "description" : "Miscelaneous design work for GeeBee Pedals",
       "icons" : ["fa-paint-brush"],
-      "date" : "Mar 11, 2013"
+      "date" : "Mar 11, 2013",
+      "url" : ""
     },
     {
       "name" : "The Sofa Kings",
       "id" : "the-sofa-kings-2",
       "description" : "Cover proposal for The Sofa Kings",
       "icons" : ["fa-paint-brush"],
-      "date" : "Jan 17, 2013"
+      "date" : "Jan 17, 2013",
+      "url" : ""
     },
     {
       "name" : "Your Time Boutique",
       "id" : "your-time-boutique",
       "description" : "Web design for Your Time Boutique",
       "icons" : ["fa-paint-brush", "fa-html5", "fa-css3", "fa-code"],
-      "date" : "Nov 15, 2012"
+      "date" : "Nov 15, 2012",
+      "url" : ""
     },
     {
       "name" : "MIDIWorm",
       "id" : "midi-worm",
       "description" : "MidiWorm is yet another soft MIDI controller",
       "icons" : ["fa-music", "fa-code"],
-      "date" : "Aug 2, 2012"
+      "date" : "Aug 2, 2012",
+      "url" : ""
     },
     {
       "name" : "Tape",
       "id" : "tape",
       "description" : "Tape pretends to be a tribute to the musicians that experimented with tape machines and tape loops in the 50s and 60s",
       "icons" : ["fa-music", "fa-code", "fa-paint-brush"],
-      "date" : "Jan 12, 2012"
+      "date" : "Jan 12, 2012",
+      "url" : ""
     },
     {
       "name" : "Bubbles",
       "id" : "bubbles",
       "description" : "Bubbles is a soft MIDI controller that receives MIDI messages from other MIDI controlers",
       "icons" : ["fa-music", "fa-code"],
-      "date" : "March 16, 2011"
+      "date" : "March 16, 2011",
+      "url" : ""
     },
     {
       "name" : "Marvin",
       "id" : "marvin",
       "description" : "Marvin is a three-dimensional image visualization and processing tool developed in C++",
       "icons" : ["fa-code", "fa-cube"],
-      "date" : "May 24, 2010"
+      "date" : "May 24, 2010",
+      "url" : ""
     },
     {
       "name" : "The Vinyl Revival",
       "id" : "the-vinyl-revival",
       "description" : "Poster illustration for The Vinyl Revival",
       "icons" : ["fa-music", "fa-paint-brush"],
-      "date" : "Oct 29, 2009"
+      "date" : "Oct 29, 2009",
+      "url" : ""
     },
     {
       "name" : "Spanish Solutions",
       "id" : "spanish-solutions",
       "description" : "Web design for Toronto based company Spanish Solutions",
       "icons" : ["fa-html5", "fa-css3"],
-      "date" : "Oct 20, 2009"
+      "date" : "Oct 20, 2009",
+      "url" : ""
     },
     {
       "name" : "Smarter Resources",
       "id" : "smarter-resources",
       "description" : "Logo proposal for Smarter Resources",
       "icons" : ["fa-paint-brush"],
-      "date" : "Oct 14, 2009"
+      "date" : "Oct 14, 2009",
+      "url" : ""
     },
     {
       "name" : "Druidas",
       "id" : "druidas",
       "description" : "Graphic design for Druidas‘ self titled album",
       "icons" : ["fa-paint-brush", "fa-music"],
-      "date" : "Sep 8, 2009"
+      "date" : "Sep 8, 2009",
+      "url" : ""
     },
     {
       "name" : "Rhino Works",
       "id" : "rhino-works",
       "description" : "Logo proposal for Rhino Works",
       "icons" : ["fa-paint-brush"],
-      "date" : "May 2, 2008"
+      "date" : "May 2, 2008",
+      "url" : ""
     },
     {
       "name" : "Give & Get Network",
       "id" : "give-n-get-network",
       "description" : "Logo design for the Give and Get Network of KW",
       "icons" : ["fa-paint-brush"],
-      "date" : "Feb 17, 2008"
+      "date" : "Feb 17, 2008",
+      "url" : ""
     },
     {
       "name" : "The Rambler",
       "id" : "the-rambler",
       "description" : "Web design proposals for The Rambler",
       "icons" : ["fa-paint-brush", "fa-html5", "fa-css3"],
-      "date" : "Nov 8, 2007"
+      "date" : "Nov 8, 2007",
+      "url" : ""
     },
     {
       "name" : "Non-Violence Festival",
       "id" : "non-violence-festival",
       "description" : "Poster proposal for the Non-Violence Festival",
       "icons" : ["fa-paint-brush"],
-      "date" : "Mar 12, 2007"
+      "date" : "Mar 12, 2007",
+      "url" : ""
     },
     {
       "name" : "The Tree Within",
       "id" : "the-tree-within",
       "description" : "Series of B&W illustrations for The Tree Within",
       "icons" : ["fa-paint-brush"],
-      "date" : "Jan 6, 2006"
+      "date" : "Jan 6, 2006",
+      "url" : ""
     }
   ],
   "colors" : [
