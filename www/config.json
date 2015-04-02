@@ -3,18 +3,20 @@
     {
       "name" : "Crane Service Systems",
       "id" : "crane-service-systems",
-      "description" : "Icon design for a mobile application implemented for our friends at Crane Service Systems to help them automate their crane inspection and repair workflows",
+      "description" : "Icon design for a mobile application implemented for our friends at Crane Service Systems to help them automate their crane inspection and repair workflows.",
       "icons" : ["fa-paint-brush", "fa-mobile"],
       "date" : "Feb 24, 2015",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "Drone",
       "id" : "drone",
-      "description" : "A 3D web application that allows the user to enjoy visual and auditory experiences by freely navigating within its environment",
+      "description" : "<p>Drone is a 3D web application that allows the user to enjoy visual and auditory experiences by freely navigating within its environment. By getting closer to a three-dimensional body the user enters its aural radio of influence triggering the body’s atmospheric sounds. Each three-dimensional body generates a different sound which is a combination of individual sound loops which try to be representative of the geometry of the body.</p><p>The body’s individual loops are completely independent of each other and mixed in real-time depending on the three-dimensional position of the user in the environment.</p>",
       "icons" : ["fa-html5", "fa-css3", "fa-video-camera", "fa-cube", "fa-code"],
       "date" : "Jan 31, 2015",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "GeeBee Pedals",
@@ -22,7 +24,8 @@
       "description" : "Web design for pedals manufacturer GeeBee",
       "icons" : ["fa-html5", "fa-css3"],
       "date" : "Jan 12, 2015",
-      "url" : ""
+      "url" : "http://geebeepedals.com",
+      "showDescription" : false
     },
     {
       "name" : "Savvy Green",
@@ -30,7 +33,8 @@
       "description" : "Web design proposal for soap manufacturer Savvy Green",
       "icons" : ["fa-html5", "fa-css3"],
       "date" : "Sep 9, 2014",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "Vital Response",
@@ -38,7 +42,8 @@
       "description" : "Web design for first aid training company Vital Response",
       "icons" : ["fa-html5", "fa-css3"],
       "date" : "Sep 9, 2014",
-      "url" : ""
+      "url" : "http://vitalresponse.ca",
+      "showDescription" : false
     },
     {
       "name" : "Agfa Deploy",
@@ -46,15 +51,17 @@
       "description" : "Logo design for Agfa's, now defunct, software delivery solution for clustered applications",
       "icons" : ["fa-paint-brush"],
       "date" : "Apr 26, 2014",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "Bloom",
       "id" : "bloom",
-      "description" : "3D animation based on computer simulations of natural systems created using Processing, Blender and Ableton Live",
+      "description" : "3D animation based on computer simulations of natural systems. Created using Processing, Blender and Ableton Live. Licensed under Creative Commons – Attribution Share Alike. Music and animation by Sixty Cycles. Based on scripts from the book The Nature of Code by Daniel Shiffman.",
       "icons" : ["fa-video-camera", "fa-music", "fa-code"],
       "date" : "Apr 24, 2014",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "Pink Chipotle",
@@ -62,7 +69,8 @@
       "description" : "Traditional Mexican and Pre-hispanic food blog",
       "icons" : ["fa-html5", "fa-css3", "fa-cutlery"],
       "date" : "Nov 8, 2013",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "The Sofa Kings",
@@ -70,23 +78,26 @@
       "description" : "The Sofa Kings are the next generation of psychedelic jam music. Taking inspiration from classic Funk and Jazz as well as modern improvisational and jam bands, they weave deceptively fluid bass lines with funky and hypnotic drum beats into atmospheric keys and guitar lines that bubble and simmer with rhythm and melody, until they erupt into a soaring celebration of music.",
       "icons" : ["fa-music", "fa-paint-brush"],
       "date" : "Jun 1, 2013",
-      "url" : "http://thesofakings.bandcamp.com"
+      "url" : "http://thesofakings.bandcamp.com",
+      "showDescription" : true
     },
     {
       "name" : "Q",
       "id" : "q",
-      "description" : "Q is a soft MIDI controller that uses particle streams and note nodes to generate MIDI messages",
+      "description" : "<p>Q is a soft MIDI controller that uses particle streams and note nodes to generate MIDI messages. When a particle comes in contact with a node it generates a MIDI message depending on the node’s activation probability. The MIDI note’s velocity is given by the particle’s speed when it collides with a node.</p><p>Development platforms: Python, Kivy, Objective-C, Cocos2D.</p>",
       "icons" : ["fa-music", "fa-code"],
       "date" : "May 11, 2013",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "eSpire",
       "id" : "espire",
-      "description" : "Logo design for eSpire",
+      "description" : "<p>Logo design for eSpire, an all-in-one eCommerce platform that allows you to sell your goods online. Espire is a Canadian product crafted with love in Waterloo, Ontario.</p>",
       "icons" : ["fa-paint-brush"],
       "date" : "Apr 11, 2013",
-      "url" : ""
+      "url" : "http://espire.ca",
+      "showDescription" : true
     },
     {
       "name" : "GeeBee Pedals",
@@ -94,7 +105,8 @@
       "description" : "Miscelaneous design work for GeeBee Pedals",
       "icons" : ["fa-paint-brush"],
       "date" : "Mar 11, 2013",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "The Sofa Kings",
@@ -102,47 +114,53 @@
       "description" : "Cover proposal for The Sofa Kings",
       "icons" : ["fa-paint-brush"],
       "date" : "Jan 17, 2013",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "Your Time Boutique",
       "id" : "your-time-boutique",
-      "description" : "Web design for Your Time Boutique",
+      "description" : "<p>Inspired by Nature and centuries past Your Time Boutique is an umbrella shop for select traditional handmade products we have come across on our journey to a simpler, wholesome lifestyle.</p><p>Your Time Boutique opts for timeless and natural artifacts that are distinctive and unique, each with superb craftsmanship and quality. The range is handmade by both Canadian and international artists whose work also represents sustainability and environmental responsibility.</p>",
       "icons" : ["fa-paint-brush", "fa-html5", "fa-css3", "fa-code"],
       "date" : "Nov 15, 2012",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "MIDIWorm",
       "id" : "midi-worm",
-      "description" : "MidiWorm is yet another soft MIDI controller",
+      "description" : "<p>MidiWorm is yet another soft MIDI controller. The worm is composed of 10 nodes. Each node is a MIDI message generator. Whether a message is generated depends on a probability calculated by the node and the node’s position on the screen. On the screen, the x-axis represents notes and the y-axis represents the velocity of the notes. It is possible to select predefined musical scales so only the notes that belong to the selected scale are played.</p><p>Development platforms: Processing.</p>",
       "icons" : ["fa-music", "fa-code"],
       "date" : "Aug 2, 2012",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "Tape",
       "id" : "tape",
-      "description" : "Tape pretends to be a tribute to the musicians that experimented with tape machines and tape loops in the 50s and 60s",
+      "description" : "<p>Tape pretends to be a tribute to the musicians that experimented with tape machines and tape loops in the 50s and 60s. It consists of four tracks where audio loops can be loaded. Each track is completely independent of each other.</p><p>Development platforms: Java</p>",
       "icons" : ["fa-music", "fa-code", "fa-paint-brush"],
       "date" : "Jan 12, 2012",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "Bubbles",
       "id" : "bubbles",
-      "description" : "Bubbles is a soft MIDI controller that receives MIDI messages from other MIDI controlers",
+      "description" : "Bubbles is a soft MIDI controller that receives MIDI messages from other MIDI controlers, e.g. keyboards. When a MIDI message is received a bubble is created based on the parameters of the message. Bubbles move and collide with each other creating new MIDI messages. Bubbles can also be created with random MIDI parameters by clicking on the screen. Developed using Processing.",
       "icons" : ["fa-music", "fa-code"],
       "date" : "March 16, 2011",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "Marvin",
       "id" : "marvin",
-      "description" : "Marvin is a three-dimensional image visualization and processing tool developed in C++",
+      "description" : "<p>Marvin is a three-dimensional image visualization and processing tool developed in C++. It utilizes VTK and ITK to render and manipulate the images. It provides a user friendly plugin interface that allows the creation of both image processing and visualization plugins.</p><p>Development platforms: C++, VTK, ITK</p>",
       "icons" : ["fa-code", "fa-cube"],
       "date" : "May 24, 2010",
-      "url" : ""
+      "url" : "",
+      "showDescription" : true
     },
     {
       "name" : "The Vinyl Revival",
@@ -150,7 +168,8 @@
       "description" : "Poster illustration for The Vinyl Revival",
       "icons" : ["fa-music", "fa-paint-brush"],
       "date" : "Oct 29, 2009",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "Spanish Solutions",
@@ -158,7 +177,8 @@
       "description" : "Web design for Toronto based company Spanish Solutions",
       "icons" : ["fa-html5", "fa-css3"],
       "date" : "Oct 20, 2009",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "Smarter Resources",
@@ -166,15 +186,17 @@
       "description" : "Logo proposal for Smarter Resources",
       "icons" : ["fa-paint-brush"],
       "date" : "Oct 14, 2009",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "Druidas",
       "id" : "druidas",
-      "description" : "Graphic design for Druidas‘ self titled album",
+      "description" : "Graphic design for Druidas‘ self titled album.",
       "icons" : ["fa-paint-brush", "fa-music"],
       "date" : "Sep 8, 2009",
-      "url" : ""
+      "url" : "https://www.facebook.com/Druidas7",
+      "showDescription" : false
     },
     {
       "name" : "Rhino Works",
@@ -182,7 +204,8 @@
       "description" : "Logo proposal for Rhino Works",
       "icons" : ["fa-paint-brush"],
       "date" : "May 2, 2008",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "Give & Get Network",
@@ -190,7 +213,8 @@
       "description" : "Logo design for the Give and Get Network of KW",
       "icons" : ["fa-paint-brush"],
       "date" : "Feb 17, 2008",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "The Rambler",
@@ -198,7 +222,8 @@
       "description" : "Web design proposals for The Rambler",
       "icons" : ["fa-paint-brush", "fa-html5", "fa-css3"],
       "date" : "Nov 8, 2007",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "Non-Violence Festival",
@@ -206,7 +231,8 @@
       "description" : "Poster proposal for the Non-Violence Festival",
       "icons" : ["fa-paint-brush"],
       "date" : "Mar 12, 2007",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     },
     {
       "name" : "The Tree Within",
@@ -214,7 +240,8 @@
       "description" : "Series of B&W illustrations for The Tree Within",
       "icons" : ["fa-paint-brush"],
       "date" : "Jan 6, 2006",
-      "url" : ""
+      "url" : "",
+      "showDescription" : false
     }
   ],
   "colors" : [

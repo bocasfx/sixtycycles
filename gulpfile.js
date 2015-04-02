@@ -63,7 +63,8 @@ gulp.task('build', function() {
     .src([
       config.bowerDir + '/jquery/dist/jquery.min.js',
       config.bowerDir + '/jquery/dist/jquery.min.map',
-      config.bowerDir + '/bootstrap/dist/js/bootstrap.min.js'
+      config.bowerDir + '/bootstrap/dist/js/bootstrap.min.js',
+      config.bowerDir + '/scrollReveal.js/dist/scrollReveal.min.js'
     ])
     .pipe(gulp.dest('./www/js'));
 });

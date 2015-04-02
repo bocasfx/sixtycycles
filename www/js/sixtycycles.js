@@ -64,7 +64,9 @@
           $("#project-content").load(url, function(response,status,xhr) {
             $("#project-title").html(params.content.name);
             $("#project-date").html(params.content.date);
-            $("#project-description").html(params.content.description);
+            if (params.content.showDescription) {
+              $("#project-description").html(params.content.description);
+            }
             $("#project-url").html(
               "<a class='project-link' target='_blank' href='" + params.content.url + "'>" + params.content.url + "</a>"
             );
@@ -157,18 +159,12 @@
         cellDescription = cellDescription.slice(0, 255) + "...";
       }
 
-      description.text(cellDescription);
-
-      // Fade
-      var fade = $("<div>", {
-        "class": "cell-description-fade"
-      });
+      description.html(cellDescription);
 
       // Append stuff
       cell.append(cellName);
       cell.append(iconContainer);
       cell.append(description);
-      cell.append(fade);
       $("#cell-container").append( cell );
     },
 

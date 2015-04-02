@@ -14,7 +14,6 @@ $cellHeight: 225px
 $heavyWeight: 700
 
 $boxShadow: 1px 1px 10px 1px #CCC
-$videoMargin: 50px 20px 20px 20px
 
 $mediumWidth: 380px
 
@@ -149,9 +148,6 @@ img
   &:hover > .cell-description
     opacity: 1 !important
     @include transition
-  &:hover > .cell-description-fade
-    opacity: 1 !important
-    @include transition
 
 .cell-name
   opacity: 1
@@ -164,17 +160,6 @@ img
   opacity: 0
   margin-top: 15px
   color: $lightDarkColor
-  @include transition
-
-.cell-description-fade
-  opacity: 0
-  position: absolute 
-  bottom: 0 
-  left: 0
-  width: 100% 
-  margin: 0 
-  padding: 50px 0 
-  background-image: linear-gradient(transparent, $darkGradient3)
   @include transition
 
 .cell-icon
@@ -201,6 +186,9 @@ img
 
 #project-description
   text-align: justify
+  margin-bottom: 25px
+
+.project-video
   margin-bottom: 25px
 
 
