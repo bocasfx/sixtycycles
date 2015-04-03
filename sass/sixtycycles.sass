@@ -9,6 +9,7 @@ $mediumDarkColor: #666
 
 $fontSize: 1em
 $headerFontSize: 2em
+$footerFontSize: 2em
 
 $cellHeight: 225px
 $heavyWeight: 700
@@ -40,9 +41,10 @@ $lightGradient3: #70787d
   -o-transition: all .5s
 
 body
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif
   margin-top: 30px
   letter-spacing: 1px
+  font-weight: 200
   @media only screen and (min-width: 768px)
     margin-top: 50px
     margin-bottom: 50px
@@ -169,6 +171,11 @@ img
 // PROJECTS
 // -------------------------------------------------------------------
 
+#project-container
+  background-color: white
+  width: 100%
+  margin-bottom: 200px
+  padding-bottom: 100px
 
 #project-title
   font-size: 1.5em
@@ -187,10 +194,36 @@ img
 #project-description
   text-align: justify
   margin-bottom: 25px
+  font-weight: 400
 
 .project-video
   margin-bottom: 25px
 
+#project-footer
+  display: none
+  margin-top: 40px
+  background-color: $highlightColor
+  height: 200px
+  width: 100%
+  left: 0
+  position: fixed
+  z-index: -100
+  bottom: 0
+  color: white
+  font-size: $footerFontSize
+  padding: 75px
+  @include transition
+
+#project-previous
+  margin-right: 20px
+  cursor: pointer
+
+#project-home
+  cursor: pointer
+
+#project-next
+  margin-left: 20px
+  cursor: pointer
 
 // -------------------------------------------------------------------
 // MODAL STUFF
@@ -234,9 +267,9 @@ img
 
 #aboot
   position: absolute
-  top: 10;
-  right: 25px;
-  font-size: 0.7em;
+  top: 10
+  right: 25px
+  font-size: 0.7em
   &>a
     color: $lightDarkColor
     outline: 0
@@ -293,4 +326,6 @@ img
 .sc-aboot-title
   font-size: 2em
   color: $lightDarkColor
+
+
 

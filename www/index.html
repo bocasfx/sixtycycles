@@ -9,7 +9,7 @@
     <title>sixtycycles</title>
 
     <link rel="stylesheet" href="css/sixtycycles.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Raleway:200' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,400' rel='stylesheet' type='text/css'>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -23,7 +23,7 @@
       <a id="main-header" class="row" href="#">SixtyCycles</a>
     </header>
 
-    <div class="container">
+    <section class="container">
       <div class="filter-container">
         <a id="filter-button" href="#"><i class="fa fa-filter"></i></a>
         <div id="filter-bar" class="filter-bar filter-bar-hidden">
@@ -42,21 +42,34 @@
       <span id="aboot" class="center">
         <a href="#" data-toggle="modal" data-target="#aboot-modal"><span>aboot </span><i class="fa fa-question-circle"></i></a>
       </span>
-    </div>
+    </section>
 
-    <div class="container">
+    <section class="container">
       <div id="cell-container" class="row"></div>
-    </div>
+    </section>
 
-    <div id="project-container" class="container center" style="display: none;">
+    <section id="project-container" class="container center" style="display: none;">
       <div class="row">
         <div id="project-title" class="col-md-8 col-md-offset-2"></div>
         <div id="project-date" class="col-md-8 col-md-offset-2"></div>
         <div id="project-description" class="col-md-8 col-md-offset-2"></div>
         <div id="project-url" class="col-md-8 col-md-offset-2"></div>
         <div id="project-content" class="col-md-8 col-md-offset-2"></div>
+        <div id="project-footer" class="">
+          <div class="center">
+            <span id="project-previous">
+              <i class="fa fa-angle-left"></i> Prev
+            </span>
+            <span id="project-home">
+              Home
+            </span>
+            <span id="project-next">
+              Next <i class="fa fa-angle-right"></i>
+            </span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
     <div class="modal fade" data-easein="pulse" id="aboot-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     </div>

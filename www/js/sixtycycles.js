@@ -9,29 +9,46 @@
     cellsActive: true,
 
     createCells : function (filter) {
+
       window.sr = null;
       var delay = 0;
-      for (var i = 0; i < sc.projects.length; i++) {
-        sc.createCell(i, filter, delay);
+      var activeProjects = [];
+
+      if (!filter) {
+        activeProjects = sc.projects;
+      } else {
+        for (var j = 0; j < sc.projects.length; j++) {
+          if ( filter !== undefined && $.inArray(filter, sc.projects[j].icons) >= 0 ) {
+            activeProjects.push(sc.projects[j]);
+          }
+        }
+      }
+
+      for (var i = 0; i < activeProjects.length; i++) {
+        
+        var bgidx = (i % sc.colors[sc.colorIdx].length);
+        var fgidx = ((i + 2) % sc.colors[sc.colorIdx].length);
+
+        var bgColor = sc.colors[sc.colorIdx][bgidx];
+        var fgColor = sc.colors[sc.colorIdx][fgidx];
+
+        var project = activeProjects[i];
+        var prevProject = null;
+        var nextProject = null;
+
+        if (i > 0) {
+          prevProject = activeProjects[i-1];
+        }
+        if (i < activeProjects.length) {
+          nextProject = activeProjects[i+1];
+        }
+
+        sc.createCell(project, prevProject, nextProject, filter, fgColor, bgColor, delay);
+
         delay += 0.05;
       }
 
       window.sr = new scrollReveal();
-      // sc.showCells();
-    },
-
-    showCells: function() {
-      setTimeout(function() {
-        var cells = $(".cell");
-        for (var i = 0; i < cells.length; i++) {
-          $(cells[i]).css({
-            "-webkit-transition": "all " + (0.5 + i/20) + "s",
-            "-moz-transition": "all " + (0.5 + i/20) + "s",
-            "-o-transition": "all " + (0.5 + i/20) + "s",
-            "opacity": 1
-          });
-        }
-      }, 100);
     },
 
     hideContentAndShowCells: function() {
@@ -66,12 +83,15 @@
             $("#project-date").html(params.content.date);
             if (params.content.showDescription) {
               $("#project-description").html(params.content.description);
+            } else {
+              $("#project-description").html('');
             }
             $("#project-url").html(
               "<a class='project-link' target='_blank' href='" + params.content.url + "'>" + params.content.url + "</a>"
             );
-            $("#project-container").fadeIn('slow');
-            $("#cells-button").fadeIn('slow');
+            $("#project-container").fadeIn('slow', function() {
+              $("#project-footer").fadeIn('slow');
+            });
             $(".filter-container").fadeOut('slow');
             sc.cellsActive = false;
           });
@@ -95,22 +115,11 @@
       
     },
 
-    createCell: function(i, filter, delay) {
+    createCell: function(project, prevProject, nextProject, filter, fgColor, bgColor, delay) {
 
-      var bgidx = (i % sc.colors[sc.colorIdx].length);
-      var fgidx = ((i + 2) % sc.colors[sc.colorIdx].length);
-
-      bgcolor = sc.colors[sc.colorIdx][bgidx];
-      fgcolor = sc.colors[sc.colorIdx][fgidx];
-
-      var name = sc.projects[i].name;
-      var desc = sc.projects[i].description;
-      var icons = sc.projects[i].icons;
-      
-      // Apply category filter
-      if ( filter !== undefined && $.inArray(filter, icons) < 0 ) {
-        return;
-      }
+      var name = project.name;
+      var desc = project.description;
+      var icons = project.icons;
 
       // The main cell
       var cell = $("<div>", {
@@ -119,10 +128,10 @@
       });
 
       cell.css({
-        "background-color": bgcolor
+        "background-color": bgColor
       });
 
-      cell.click(sc.projects[i], sc.loadProject);
+      cell.click(project, sc.loadProject);
 
       // Project name
       var cellName = $("<div>", {
@@ -130,7 +139,7 @@
       });
       cellName.text(name);
       cellName.css({
-        "color": fgcolor,
+        "color": fgColor,
         "transition": "all .5s",
         "-ms-transition": "all .5s",
         "-webkit-transition": "all .5s",
@@ -156,7 +165,7 @@
       var cellDescription = desc;
 
       if (cellDescription.length > 255) {
-        cellDescription = cellDescription.slice(0, 255) + "...";
+        cellDescription = cellDescription.slice(0, 200) + "...";
       }
 
       description.html(cellDescription);
