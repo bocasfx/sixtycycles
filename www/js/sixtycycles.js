@@ -15,8 +15,10 @@
       var activeProjects = [];
 
       if (!filter) {
+        // Show all projects if there's no filter
         activeProjects = sc.projects;
       } else {
+        // Create an array of active projects based on the filter
         for (var j = 0; j < sc.projects.length; j++) {
           if ( filter !== undefined && $.inArray(filter, sc.projects[j].icons) >= 0 ) {
             activeProjects.push(sc.projects[j]);
@@ -33,17 +35,17 @@
         var fgColor = sc.colors[sc.colorIdx][fgidx];
 
         var project = activeProjects[i];
-        var prevProject = null;
-        var nextProject = null;
+        project.prev = null;
+        project.next = null;
 
         if (i > 0) {
-          prevProject = activeProjects[i-1];
+          project.prev = activeProjects[i-1];
         }
         if (i < activeProjects.length) {
-          nextProject = activeProjects[i+1];
+          project.next = activeProjects[i+1];
         }
 
-        sc.createCell(project, prevProject, nextProject, filter, fgColor, bgColor, delay);
+        sc.createCell(project, filter, fgColor, bgColor, delay);
 
         delay += 0.05;
       }
@@ -51,8 +53,9 @@
       window.sr = new scrollReveal();
     },
 
-    hideContentAndShowCells: function() {
-      if(!sc.cellsActive) {
+    showCells: function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      $("#project-footer").fadeOut('slow', function() {
         $("#project-container").fadeOut('slow', function() {
           $("#project-content").empty();
           $("#project-title").empty();
@@ -61,6 +64,12 @@
           sc.createCells(sc.filter);
           sc.cellsActive = true;
         });
+      });
+    },
+
+    hideContentAndShowCells: function() {
+      if(!sc.cellsActive) {
+        sc.showCells();
       }
     },
 
@@ -71,30 +80,11 @@
       $(cells[0]).bind('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
         
         $("#cell-container").empty();
-        
+
         if (params.type === "filter") {
           sc.createCells(params.content);
-        }
-
-        if (params.type === "project") {
-          var url = "./modals/" + params.content.id + ".html";
-          $("#project-content").load(url, function(response,status,xhr) {
-            $("#project-title").html(params.content.name);
-            $("#project-date").html(params.content.date);
-            if (params.content.showDescription) {
-              $("#project-description").html(params.content.description);
-            } else {
-              $("#project-description").html('');
-            }
-            $("#project-url").html(
-              "<a class='project-link' target='_blank' href='" + params.content.url + "'>" + params.content.url + "</a>"
-            );
-            $("#project-container").fadeIn('slow', function() {
-              $("#project-footer").fadeIn('slow');
-            });
-            $(".filter-container").fadeOut('slow');
-            sc.cellsActive = false;
-          });
+        } else {
+          sc.showProject(params.content);
         }
       });
 
@@ -115,7 +105,68 @@
       
     },
 
-    createCell: function(project, prevProject, nextProject, filter, fgColor, bgColor, delay) {
+    showProject: function(project) {
+    
+      var url = "./modals/" + project.id + ".html";
+      $("#project-content").load(url, function(response,status,xhr) {
+        
+        $("#project-title").html(project.name);
+        $("#project-date").html(project.date);
+        
+        if (project.showDescription) {
+          $("#project-description").html(project.description);
+        } else {
+          $("#project-description").html('');
+        }
+
+        $("#project-url").html(
+          "<a class='project-link' target='_blank' href='" + project.url + "'>" + project.url + "</a>"
+        )
+        ;
+        $("#project-container").fadeIn('slow', function() {
+          $("#project-footer").fadeIn('slow');
+        });
+
+        if (project.prev) {
+          $("#project-prev").css({
+            "display": "inline"
+          });
+          $("#project-prev").click(project.prev, sc.reloadProject);
+        } else {
+          $("#project-prev").css({
+            "display": "none"
+          });
+        }
+
+        if (project.next) {
+          $("#project-next").css({
+            "display": "inline"
+          });
+          $("#project-next").click(project.next, sc.reloadProject);
+        } else {
+          $("#project-next").css({
+            "display": "none"
+          });
+        }
+
+        $(".filter-container").fadeOut('slow');
+        sc.cellsActive = false;
+      });
+    },
+
+    reloadProject: function(event) {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      $("#project-footer").fadeOut('slow', function() {
+        $("#project-container").fadeOut('slow', function() {
+          $("#project-content").empty();
+          $("#project-title").empty();
+          $("#project-date").empty();
+          sc.showProject(event.data);
+        });
+      });
+    },
+
+    createCell: function(project, filter, fgColor, bgColor, delay) {
 
       var name = project.name;
       var desc = project.description;
@@ -242,6 +293,7 @@
       $("#filter-button").click(sc.toggleFilterBar);
       $("#filter-bar a").click(sc.applyFilter);
       $("#main-header").click(sc.hideContentAndShowCells);
+      $("#project-home").click(sc.hideContentAndShowCells);
 
       // sc.colorIdx = Math.floor((Math.random() * 3));
 

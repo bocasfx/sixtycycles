@@ -1,51 +1,15 @@
 @import "bootstrap"
 @import "font-awesome"
-
-$highlightColor: #FD0066
-$lightDarkColor: #CCC
-$iconColor: #777
-$lightTextColor: #FFF
-$mediumDarkColor: #666
-
-$fontSize: 1em
-$headerFontSize: 2em
-$footerFontSize: 2em
-
-$cellHeight: 225px
-$heavyWeight: 700
-
-$boxShadow: 1px 1px 10px 1px #CCC
-
-$mediumWidth: 380px
-
-$darkGradient1: #484e55
-$darkGradient2: #3a3f44
-$darkGradient3: #313539
-
-$lightGradient1: #8a9196
-$lightGradient2: #7a8288
-$lightGradient3: #70787d
-
-@mixin bg-gradient($step1, $step2, $step3)
-  border-color: $step2
-  background: -webkit-linear-gradient($step1, $step2 60%, $step3)
-  background: -o-linear-gradient($step1, $step2 60%, $step3)
-  background: -moz-linear-gradient($step1, $step2 60%, $step3)
-  background: linear-gradient($step1, $step2 60%, $step3)
-
-@mixin transition
-  transition: all .5s
-  -ms-transition: all .5s 
-  -webkit-transition: all .5s
-  -moz-transition: all .5s
-  -o-transition: all .5s
+@import "colors"
+@import "variables"
+@import "mixins"
 
 body
   font-family: 'Raleway', sans-serif
   margin-top: 30px
   letter-spacing: 1px
   font-weight: 200
-  @media only screen and (min-width: 768px)
+  @media #{$768}
     margin-top: 50px
     margin-bottom: 50px
 
@@ -61,13 +25,14 @@ a
 header
   font-size: $headerFontSize
   margin-bottom: 50px
-  @media only screen and (min-width: 768px)
+  @media #{$768}
     margin-bottom: 100px
 
-#main-header
+#main-header > span
   color: $mediumDarkColor
   outline: 0
   text-decoration: none
+  cursor: pointer
   @include transition
   &:hover
     color: $highlightColor
@@ -101,7 +66,7 @@ img
   .active
     color: $highlightColor
   span
-    font-size: 0.9em
+    font-size: 1em
     color: $lightDarkColor
     margin-right: 10px
 
@@ -112,7 +77,7 @@ img
     &:hover
       color: $mediumDarkColor
   margin: -30px 0 12px -5px
-  @media only screen and (min-width: 768px)
+  @media #{$768}
     margin: -30px 0 12px -15px
 
 .filter-bar
@@ -128,6 +93,11 @@ img
 // -------------------------------------------------------------------
 // CELLS
 // -------------------------------------------------------------------
+
+#cell-container
+  margin-top: 20px
+  @media #{$400}
+    margin-top: 0
 
 .cell
   height: $cellHeight
@@ -176,9 +146,11 @@ img
   width: 100%
   margin-bottom: 200px
   padding-bottom: 100px
+  box-shadow: $boxShadow
+  min-height: 800px
 
 #project-title
-  font-size: 1.5em
+  font-size: 3em
   color: $highlightColor
 
 #project-date
@@ -210,11 +182,13 @@ img
   z-index: -100
   bottom: 0
   color: white
-  font-size: $footerFontSize
-  padding: 75px
+  font-size: $footerFontSizeSmall
+  @media #{$768}
+    font-size: $footerFontSizeLarge
+  padding: 75px 0
   @include transition
 
-#project-previous
+#project-prev
   margin-right: 20px
   cursor: pointer
 
@@ -230,11 +204,11 @@ img
 // -------------------------------------------------------------------
 
 .modal-dialog
-  width: 100%
+  width: 60%
   margin-left: auto
   margin-right: auto
   margin-top: 0
-  @media only screen and (min-width: 768px)
+  @media #{$768}
     width: 60%
   @media only screen and (min-width: 1281px)
     width: 800px
@@ -242,7 +216,7 @@ img
 .modal-content
   margin-bottom: 50px
   margin-top: 0
-  @media only screen and (min-width: 768px)
+  @media #{$768}
     margin-top: 25px  
 
 .modal.fade .modal-dialog
@@ -307,7 +281,7 @@ img
 
 .sc-aboot-modal
   width: 100%
-  @media only screen and (min-width: 768px)
+  @media #{$768}
     width: 50%
 
 .sc-canada
