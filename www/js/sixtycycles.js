@@ -54,12 +54,12 @@
     },
 
     showCells: function() {
-      $("html, body").animate({ scrollTop: 0 }, "slow");
       $("#project-footer").fadeOut('slow', function() {
         $("#project-container").fadeOut('slow', function() {
           $("#project-content").empty();
           $("#project-title").empty();
           $("#project-date").empty();
+          $("html, body").scrollTop(0);
           $(".filter-container").fadeIn('slow');
           sc.createCells(sc.filter);
           sc.cellsActive = true;
@@ -80,6 +80,7 @@
       $(cells[0]).bind('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
         
         $("#cell-container").empty();
+        $("html, body").scrollTop(0);
 
         if (params.type === "filter") {
           sc.createCells(params.content);
@@ -87,8 +88,6 @@
           sc.showProject(params.content);
         }
       });
-
-      $("html, body").animate({ scrollTop: 0 }, "slow");
 
       for (var i = cells.length-1; i >= 0; i--) {
         var factor = cells.length - i;
@@ -108,6 +107,7 @@
     showProject: function(project) {
     
       var url = "./modals/" + project.id + ".html";
+      $("#wait").show();
       $("#project-content").load(url, function(response,status,xhr) {
         
         $("#project-title").html(project.name);
@@ -150,17 +150,18 @@
         }
 
         $(".filter-container").fadeOut('slow');
+        $("#wait").hide();
         sc.cellsActive = false;
       });
     },
 
     reloadProject: function(event) {
-      $("html, body").animate({ scrollTop: 0 }, "slow");
       $("#project-footer").fadeOut('slow', function() {
         $("#project-container").fadeOut('slow', function() {
           $("#project-content").empty();
           $("#project-title").empty();
           $("#project-date").empty();
+          $("html, body").scrollTop(0);
           sc.showProject(event.data);
         });
       });
