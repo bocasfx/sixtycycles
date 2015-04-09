@@ -106,8 +106,8 @@
 
     showProject: function(project) {
     
-      var url = "./modals/" + project.id + ".html";
-      $("#wait").show();
+      var url = "./projects/" + project.id + ".html";
+      // $("#wait").show();
       $("#project-content").load(url, function(response,status,xhr) {
         
         $("#project-title").html(project.name);
@@ -150,7 +150,7 @@
         }
 
         $(".filter-container").fadeOut('slow');
-        $("#wait").hide();
+        // $("#wait").hide();
         sc.cellsActive = false;
       });
     },
@@ -244,7 +244,7 @@
 
     generaterAboutSection: function() {
       $("#aboot").click(function() {
-        $("#aboot-modal").load("./modals/about.html");
+        $("#aboot-modal").load("./projects/about.html");
       });
     },
 

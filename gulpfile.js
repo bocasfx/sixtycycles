@@ -1,70 +1,75 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var plumber = require('gulp-plumber');
-var notify = require('gulp-notify');
-var bower = require('gulp-bower');
-var livereload = require('gulp-livereload');
-var del = require('del');
+// var usemin = require('gulp-usemin');
+// var uglify = require('gulp-uglify');
+// var minifyHtml = require('gulp-minify-html');
+// var minifyCss = require('gulp-minify-css');
+// var jsonminify = require('gulp-jsonminify');
+// var sass = require('gulp-sass');
+// var livereload = require('gulp-livereload');
 var $ = require('gulp-load-plugins')({lazy: true});
 
-var config = {
-  sassPath: './sass',
-  bowerDir: './bower_components',
-  sass: ['./sass/**/*.scss', './sass/**/*.sass'],
-  modals: ['./www/modals/**/*.html', './www/**/*.html'],
-  js: ['./www/js/**/*.js'],
-};
+gulp.task('default', ['minify', 'projects', 'json', 'fonts', 'images', 'sass'], function () {});
 
-gulp.task('bower', function() {
-  return bower()
-    .pipe(gulp.dest(config.bowerDir));
+ 
+gulp.task('minify', function () {
+  gulp.src('./src/index.html')
+      .pipe($.usemin({
+        assetsDir: '.',
+        css: [$.minifyCss(), 'concat'],
+        html: [$.minifyHtml({empty: true})],
+        js: [$.uglify()]
+      }))
+      .pipe(gulp.dest('public/'));
 });
 
-gulp.task('icons', function() {
-  return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*')
-    .pipe(gulp.dest('./www/fonts'));
+gulp.task('projects', function () {
+  return gulp.src('./src/projects/*.html')
+    .pipe($.minifyHtml())
+    .pipe(gulp.dest('./public/projects/'));
 });
 
-gulp.task('watch', function () {
-  livereload.listen();
-  gulp.watch(config.sass, ['sass']);
-  gulp.watch(config.modals, ['reload']);
-  gulp.watch(config.js, ['reload']);
+gulp.task('json', function () {
+    return gulp.src(['./src/config.json'])
+        .pipe($.jsonminify())
+        .pipe(gulp.dest('public/'));
 });
 
-gulp.task('reload', function() {
-  return gulp
-    .src(config.modals)
-    .pipe(livereload());
+
+gulp.task('fonts', function() {
+  gulp.src('bower_components/fontawesome/fonts/**.*')
+    .pipe(gulp.dest('./public/fonts'));
+});
+
+gulp.task('images', function() {
+  gulp.src('src/img/**')
+    .pipe(gulp.dest('./public/img'));
 });
 
 gulp.task('sass', function() {
-  return gulp
-    .src(config.sassPath + '/sixtycycles.sass')
-    .pipe(sass({
+  gulp.src('src/sass/sixtycycles.sass')
+    .pipe($.sass({
       sourceComments: 'normal',
       style: 'compressed',
       includePaths: [
-        './sass',
-        config.bowerDir + '/bootstrap-sass-official/assets/stylesheets',
-        config.bowerDir + '/fontawesome/scss',
+        './src/sass',
+        'bower_components/bootstrap-sass-official/assets/stylesheets',
+        'bower_components/fontawesome/scss',
       ]
     }))
     .pipe($.minifyCss({
       keepSpecialComments: 0
     }))
-    .pipe($.rename({extname: '.min.css'}))
-    .pipe(gulp.dest('./www/css'))
-    .pipe(livereload());
+    .pipe(gulp.dest('./public/css'))
+    .pipe($.livereload());
 });
 
-gulp.task('build', function() {
+gulp.task('watch', function () {
+  $.livereload.listen();
+  gulp.watch('src/sass/*.sass', ['sass']);
+});
+
+gulp.task('reload', function() {
   return gulp
-    .src([
-      config.bowerDir + '/jquery/dist/jquery.min.js',
-      config.bowerDir + '/jquery/dist/jquery.min.map',
-      config.bowerDir + '/bootstrap/dist/js/bootstrap.min.js',
-      config.bowerDir + '/scrollReveal.js/dist/scrollReveal.min.js'
-    ])
-    .pipe(gulp.dest('./www/js'));
+    .src(config.modals)
+    .pipe($.livereload());
 });
